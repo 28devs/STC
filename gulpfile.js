@@ -43,6 +43,8 @@
   const processors = [
     require('postcss-import'),
     require('postcss-alias'),
+    require('postcss-for'),
+    require('postcss-each'),
     require('postcss-assets')({
       loadPaths: ['img/', 'img/about', 'img/icons'],
       basePath: 'dest/',
@@ -52,11 +54,11 @@
     require('postcss-nested'),
     require('postcss-inline-media'),
     require('postcss-short-spacing'),
-    require('postcss-short-text'),
     require('postcss-size'),
     require('postcss-position'),
     require('postcss-flexbox'),
     require('postcss-simple-vars'),
+    require('postcss-short-text'),
     require('postcss-responsive-type'),
     require('postcss-extend'),
     require('postcss-mixins'),
