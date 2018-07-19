@@ -1,0 +1,23 @@
+.glide
+
+  &__bullets
+    box: center middle
+    
+
+    &--only-sm
+      display: flex @md none
+
+  &__bullet
+    size: 6px
+    margin-right: 14px
+    border-radius: 50%
+    background-color: rgba(135, 135, 135, .3)
+    transition: $transition
+    cursor: pointer
+
+    &:last-child
+      margin-right: 0 
+
+    &--active
+      background-color: #818181
+
