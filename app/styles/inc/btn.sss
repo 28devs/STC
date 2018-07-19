@@ -1,0 +1,68 @@
+.btn
+  padding: 15px 60px 16px
+  text: #fff bold 16px 23px
+  text-decoration: none
+  font-family: $ff
+  border: 0
+  outline: 0
+  cursor: pointer
+  transition: box-shadow .04s ease, background $transition
+  border-radius: 30px
+  background: linear-gradient(180deg, #147DFF 0%, #036FF5 100%)
+  box-shadow: 0 20px 30px rgba(3, 111, 245, 0.3)
+  display: inline-block
+  user-select: none
+
+  &:hover
+    background: linear-gradient(180deg, #3791FF 0%, #2184FF 100%)
+    box-shadow: 0 0 0 rgba(3, 111, 245, 0.3)
+
+  &:active
+    background: linear-gradient(180deg, #0C69DC 0%, #2184FF 100%)
+
+  &--secondary
+    background: linear-gradient(180deg, #00CF68 0%, #00A653 100%)
+    box-shadow: 0 20px 30px rgba(0, 166, 83, 0.3)
+
+    &:hover
+      background: linear-gradient(180deg, #01EE78 0%, #03D66C 100%)
+      box-shadow: 0 0 0 rgba(0, 166, 83, 0.3)
+
+    &:active
+      background: linear-gradient(180deg, #00BD5F 0%, #00E773 100%)
+
+  &--small
+    padding: 8px 44px 9px
+    text: $primary 500 14px
+    border: 2px solid $primary
+    background: transparent
+    box-shadow: none
+
+    &:hover
+      background: $primary
+      text: #fff
+
+    &:active
+      box-shadow: inset 0px 3px 0px #005ED4
+
+    &^&--secondary
+      border-color: $secondary
+      text: $secondary
+
+      &:hover
+        background: $secondary
+        text: #fff
+
+      &:active
+        box-shadow: inset 0px 3px 0px #009249
+
+    &^&--gray
+      border-color: $gray
+      text: $gray
+
+      &:hover
+        background: $gray
+        text: #fff
+
+      &:active
+        box-shadow: inset 0px 3px 0px #727272
