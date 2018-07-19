@@ -1,0 +1,17 @@
+section.services.block
+  
+  .container
+    h1.services__title.h1 Что мы предоставляем
+    
+    .services__slider
+      .glide
+        
+        .services__inner.block-inner.glide__track(data-glide-el='track')
+          
+          .glide__slides
+            each item in services
+              .glide__slide.services__item
+                .services__service
+                  .services__img
+                  .services__service-title.h3= item.title
+                  .services__service-sub-title= item.subTitle
