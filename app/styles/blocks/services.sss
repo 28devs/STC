@@ -2,7 +2,6 @@
   background: url('../img/services/blue-bg.svg') no-repeat 
   background-position: left -200px top -70px @lg left 0 top -70px
   padding: 220px 0 50px @md 231px 0 70px @lg 120px 0
-  
 
   &__title
     text-align: center
@@ -19,13 +18,17 @@
     & .glide__slide
       height: 100% @md initial
 
-
   &__item
     width: initial @md 50% @lg 33.33333% 
     padding: 15px
     box-sizing: border-box
     cursor: @md-down pointer
  
+    @each $i in (1,2,3,4,5,6)
+      &:nth-of-type($i) ^&__img
+        background: svg-load('services/icon-$i.svg') no-repeat center / contain
+        size: size('services/icon-$i.svg')
+
   &__service
     box: vertical center middle
     background: #FFFFFF
@@ -42,8 +45,3 @@
   &__service-sub-title
     text: 16px
     text-align: center
-
-  @each $i in (1,2,3,4,5,6)
-    &__img:nth-of-type($(i))
-      background: svg-load('services/icon-$(i).svg') no-repeat center / contain
-      size: size('services/icon-$(i).svg')
