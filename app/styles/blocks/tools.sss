@@ -2,40 +2,50 @@
   background: linear-gradient(65.95deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
 
   &__title
-    text-align: center
+    text-align: left @md center
     color: #fff
+    line-height: @md-down 29px
+    
 
   &__sub-title
     color: #fff
-    text-align: center
-    margin-top: 21px
+    text-align: left @md center
+    margin-top: 14px @md 21px
+    text: @md-down 14px 18px
 
   &__inner
     box: space-between wrap @md nowrap
     width: initial
-    margin: 28px 0 @md 31px -40px 0 @lg 53px -45px 0
+    margin: 28px 0 @md 20px -40px 0 @lg 53px -45px 0
 
   &__item
     width: initial @md 50%
-    padding: 40px
+    padding: 14px 0 @md 22px 40px @lg 40px
     box-sizing: border-box
     cursor: @md-down pointer
 
   &__img
     margin-left: auto @lg 0
     margin-right: auto @lg 30px
-    margin-bottom: 30px @lg 0
-    float: none @lg left
+    margin-bottom: 0 @md 20px @lg 0
+    float: left @md none @lg left
+    size: 60px @md 100px
 
   @each $i in (1,2,3,4)
     &__img:nth-of-type($(i))
       background: svg-load('tools/icon-$(i).svg') no-repeat center / contain
-      size: size('tools/icon-$(i).svg')
 
   &__item-title
     text: #0AAEFA 24px * 500
-    margin-left: 0 @lg 130px
+    margin-left: 80px @md 0 @lg 130px
     text-align: left @md center @lg left
+    padding-top: @md-down 12px
+    
+    
+    &:after 
+      display: block @md none
+      content: ''
+      clear: both
 
   &__item-desc
     margin-top: 17px
