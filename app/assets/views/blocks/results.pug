@@ -1,0 +1,28 @@
+section.results.block
+
+  .container
+    h1.results__title.h1 Наши результаты
+    
+    h4.results__sub-title.h4 У нас одна цель - высокие доходы наших клиентов
+
+    .results__slider
+      .glide
+        .block-inner
+          .results__inner.glide__track(data-glide-el='track')
+            .glide__slides
+              each item in result
+
+                .glide__slide
+                  .results__item
+                    .results__legend
+                      .results__person= item.name
+                      .results__legend-desc= item.desc
+
+                      a.results__link(href="#!") Смотреть результат
+
+                    .results__graph
+                      img(src='img/results/graph-' + item.graph + '.svg')
+
+          .glide__panel
+            .
+            .glide__bullets.glide__bullets(data-glide-el='controls[nav]')
