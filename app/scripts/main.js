@@ -1,4 +1,16 @@
 //
+// Open/close mobile menu
+//
+
+const headerMenu = document.querySelector('.header__mobile-menu');
+
+if (headerMenu) {
+  headerMenu.addEventListener('click', function() {
+    document.querySelector('.header').classList.toggle('header--open');
+  });
+}
+
+//
 // Minify header when page scroll
 //
 
@@ -8,8 +20,8 @@ if (stickyNav) {
   stickyNav.classList.add('header--is-load');
 
   const headerScroll = function() {
-    if (stickyNav && window.innerWidth >= 768) {
-      this.scrollY < 8
+    if (stickyNav && window.innerWidth >= 1) {
+      this.scrollY < 10
         ? stickyNav.classList.remove('header--minify')
         : stickyNav.classList.add('header--minify');
     } else {

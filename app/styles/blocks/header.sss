@@ -12,22 +12,82 @@
       size: 118px 45px
       margin-right: 82px
 
+    ^&__nav
+
+      &-link
+        &:hover
+          text: $primary
+
+        &--active
+          text: $primary
+
+          &:after
+            content: ''
+            display: block
+            height: 4px
+            background: $primary
+            transform: translateY(20px)
+
+  &--open
+    background: linear-gradient(309.51deg, #0DD0FB 1.14%, #036FF5 84.17%)
+    padding-bottom: 85px
+
+    ^&__nav
+      visibility: visible
+      opacity: 1
+      transform: translateY(0)
+      transition: transform .4s ease, opacity .3s ease
+
+      &-link
+        text: 500 24px
+
+        &:hover
+          text: #fff
+
+        &--active
+          text: #fff
+
+          &:after
+            content: ''
+            display: block
+            height: 4px
+            background: #fff
+            transform: translateY(20px)
+
   &__container
     box: center space-between
+    max-width: @lg-down 100%
 
   &__logo
-    size: 200px 75px
-    background: resolve('logo.png') center / contain
+    size: 121px 45px @sm 139px 53px @md 200px 75px
+    background: resolve('logo.png') no-repeat center / contain
     transition: $transition
 
   &__nav
+    box: middle
+    visibility: hidden @xl visible
+    position: absolute null 0 10px 0 @xl static
+    opacity: 0 @xl 1
+    transform: translateY(-15px) @xl none
 
     &-link
       text: #fff 16px
       text-decoration: none
+      display: block
+      padding: 10px
 
       & + &
-        margin-left: 38px
+        margin-left: 18px
 
-      &:hover
-        text: #0A75FA
+  &__btn
+    margin-left: auto @xl 0
+    display: @sm-down none
+
+  &__mobile-menu
+    display: block @xl none
+    background: svg-load('icons/mobile-menu.svg')
+    size: size('icons/mobile-menu.svg')
+    border: 0
+    outline: 0
+    cursor: pointer
+    margin-left: 50px @lg 100px

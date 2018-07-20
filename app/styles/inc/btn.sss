@@ -1,6 +1,6 @@
 .btn
   padding: 15px 60px 16px
-  text: #fff bold 16px 23px
+  text: #fff center bold 16px 23px
   text-decoration: none
   font-family: $ff
   border: 0
@@ -12,6 +12,12 @@
   box-shadow: 0 20px 30px rgba(3, 111, 245, 0.3)
   display: inline-block
   user-select: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+  &:before, &:after
+    transition: $transition
 
   &:hover
     background: linear-gradient(180deg, #3791FF 0%, #2184FF 100%)
@@ -78,20 +84,14 @@
       &:active
         box-shadow: inset 0px 3px 0px #E4E4E4
 
-  &[class*='--icon-']
-    &:before, &:after
-      transition: $transition
-
   &--icon-play
-    padding-right: 29px
-    padding-left: 24px
-    display: inline-flex
-    align-items: center
+    padding-right: 23px @sm 29px
+    padding-left: 21px @sm 24px
 
     &:before
       content: ''
       display: inline-block
-      margin-right: 14px
+      margin-right: 12px @sm 14px
       background: svg-load('icons/play.svg' fill: #fff)
       size: size('icons/play.svg')
 
@@ -100,8 +100,6 @@
 
   &--icon-dollar
     padding: 0 0 0 25px
-    display: inline-flex
-    align-items: center
 
     &:after
       content: ''
@@ -114,3 +112,58 @@
 
     &:hover:after
       background: $primary svg-load('icons/dollar.svg' fill: #fff) no-repeat center
+
+  &--circle
+    background: linear-gradient(180deg, #147DFF 0%, #036FF5 100%)
+    box-shadow: 0px 7px 15px rgba(3, 111, 245, 0.3)
+    size: 42px
+    padding: 0
+    justify-content: center
+
+  &--icon-vk
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/vk.svg' fill: #fff)
+      size: size('icons/vk.svg')
+
+  &--icon-in
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/in.svg' fill: #fff)
+      size: size('icons/in.svg')
+
+  &--icon-fb
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/fb.svg' fill: #fff)
+      size: size('icons/fb.svg')
+
+  &--icon-video
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/play.svg' fill: #fff)
+      size: size('icons/play.svg')
+
+  &--xl
+    size: 110px
+    border-radius: 100px
+
+    &:before
+      size: 24px 28px
+      background-size: contain
+      background-repeat: no-repeat
+      margin-right: -5px
+
+  &--echo
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      position: absolute 0 0 0 0
+      border-radius: 100px
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.1)

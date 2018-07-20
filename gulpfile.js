@@ -100,7 +100,7 @@
         })
       )
       .pipe(rename({ extname: '.css' }))
-      .pipe(sourcemaps.write('/'))
+      //.pipe(sourcemaps.write('/'))
       .pipe(gulp.dest('dest/styles/'));
   });
 
