@@ -1,5 +1,8 @@
 .tools
-  background: linear-gradient(65.95deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
+  background: url('../img/tools/left-shape.svg') no-repeat top left,
+              url('../img/tools/right-shape.svg') no-repeat bottom right / contain,
+              linear-gradient(65.95deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
+              
 
   &__title
     text-align: left @md center
@@ -10,7 +13,7 @@
     color: #fff
     text-align: left @md center
     margin-top: 14px @md 21px
-    text: @md-down 14px 18px
+    text: @md-down 16px 18px
 
   &__inner
     box: space-between wrap @md nowrap

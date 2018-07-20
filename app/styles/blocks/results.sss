@@ -1,0 +1,45 @@
+.results
+  background: url('../img/results/left-shape.svg') no-repeat top left / cover,
+              url('../img/results/right-shape.svg') no-repeat bottom right
+              
+  &__title
+    text-align: center
+
+  &__sub-title
+    text-align: center
+    text: @md-down 16px 18px
+
+  &__inner
+    background: #F3F8FF
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05), 0px 15px 30px rgba(0, 0, 0, 0.05)
+    border-radius: 5px
+
+  &__item
+    box: space-between
+
+  &__legend
+    width: 40%
+    padding: 35px 30px
+
+  &__person
+    text: 18px * 700 @md 24px
+    margin-bottom: 8px @md 12px @lg 20px
+
+  &__legend-desc
+    text: 14px 16px @md 16px 20px
+    margin-bottom: 12px @md 18px
+  
+  &__link
+    display: inline-block
+    text-decoration: none
+    text: $blue 14px
+    padding-bottom: 5px
+    border-bottom: 2px solid $blue
+    transition: $transition
+
+    &:hover
+      border-bottom: transparent
+
+  &__graph
+    width: 60%
+    padding: 15px 10px
