@@ -29,6 +29,14 @@ const headerMenu = document.querySelector('.header__mobile-menu');
 if (headerMenu) {
   headerMenu.addEventListener('click', function() {
     document.querySelector('.header').classList.toggle('header--open');
+
+    document.querySelector('.menu-top').classList.toggle('menu-top-click');
+    document
+      .querySelector('.menu-middle')
+      .classList.toggle('menu-middle-click');
+    document
+      .querySelector('.menu-bottom')
+      .classList.toggle('menu-bottom-click');
   });
 }
 
@@ -77,13 +85,13 @@ if (servicesSlider) {
           bullets.forEach(function(elem) {
             elem.classList.remove('glide__bullet--active');
           });
-      
+
           let activeBullet = document.querySelector(
             '.glide__bullet[data-glide-dir="=' + servicesSliderInit.index + '"]'
           );
           activeBullet.classList.add('glide__bullet--active');
         });
-      
+
         servicesSliderInit.mount();
       }
     } else {
