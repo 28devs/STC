@@ -1,4 +1,28 @@
 //
+// Minify header when page scroll
+//
+
+const stickyNav = document.querySelector('.header');
+
+if (stickyNav) {
+  stickyNav.classList.add('header--is-load');
+
+  const headerScroll = function() {
+    if (stickyNav && window.innerWidth >= 768) {
+      this.scrollY < 8
+        ? stickyNav.classList.remove('header--minify')
+        : stickyNav.classList.add('header--minify');
+    } else {
+      stickyNav.classList.remove('header--minify');
+    }
+  };
+  headerScroll();
+
+  window.addEventListener('scroll', headerScroll);
+  window.addEventListener('resize', headerScroll);
+}
+
+//
 // About certs slider
 //
 

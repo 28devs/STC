@@ -1,5 +1,4 @@
 .hero
-  height: 800px
   background: resolve('hero-bg.jpg') center / cover
   position: relative
 
@@ -13,10 +12,44 @@
   &__container
     position: relative
     z-index: 2
+    box: center left
+    padding-top: 225px
+    padding-bottom: 90px
+
+  &__text-wrap
+    padding-right: 30px
 
   &__title
-    text: #fff 43px
+    text: #fff 40px @md 40px @lg 41px
+    margin-top: 15px
 
   &__text
     text: #fff 24px
+    margin: 20px 0 90px
   
+  &__recall
+    min-width: 390px
+    max-width: 390px
+    padding: 49px 39px 50px
+
+    &-title
+      text: center bold 24px 1.2
+
+    &-text
+      text: center #7C90B9 14px 21px
+      margin: 18px 0 30px
+
+    &-form
+      width: 280px
+      margin: 0 auto
+
+    &-btn
+      margin-top: 17px
+      width: 100%
+      padding: * 20px
+
+    &-input
+
+      & + &
+        margin-top: 16px
+ 

@@ -1,12 +1,17 @@
 include inc/head.pug
-include inc/header.pug
 
 .style
-  .btn Кнопка
-  .btn.btn--secondary Кнопка
-  .btn.btn--small Кнопка
-  .btn.btn--small.btn--secondary Кнопка
-  .btn.btn--small.btn--gray Кнопка
+  .style__row
+    .btn Кнопка
+    .btn.btn--secondary Кнопка
+    .btn.btn--small Кнопка
+    .btn.btn--small.btn--secondary Кнопка
+    .btn.btn--small.btn--gray Кнопка
 
-include inc/footer.pug
+  .style__row
+    .input
+      input.input__elem(type='text' name='name' placeholder='Имя')
+    .input.input--error
+      input.input__elem(type='text' name='name' placeholder='Ошибка')
+      
 include inc/foot.pug
