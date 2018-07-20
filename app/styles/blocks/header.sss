@@ -18,7 +18,7 @@
 
   &--minify
     background: linear-gradient(10.54deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
-    padding: 9px 0 10px
+    padding: 9px 0 10px @sm 9px 0 10px
 
     ^&__logo
       size: 118px 45px
@@ -103,9 +103,6 @@
             background: #fff
             transform: translateY(20px)
 
-    ^&__mobile-menu
-      background: svg-load('icons/close.svg') no-repeat center
-
   &__container
     box: center space-between
     max-width: @lg-down 100%
@@ -141,8 +138,8 @@
 
   &__mobile-menu
     display: block @xl none
-    background: svg-load('icons/mobile-menu.svg')
-    size: size('icons/mobile-menu.svg')
+    background: transparent
+    size: 38px 23px
     border: 0
     outline: 0
     cursor: pointer
