@@ -24,19 +24,25 @@ if (sliderDotBlocks) {
 // Open/close mobile menu
 //
 
+const toggleMobileMenu = function() {
+  document.querySelector('.menu-top').classList.toggle('menu-top-click');
+  document.querySelector('.menu-middle').classList.toggle('menu-middle-click');
+  document.querySelector('.menu-bottom').classList.toggle('menu-bottom-click');
+};
+
+const closeMobileMenu = function() {
+  document.querySelector('.menu-top').classList.remove('menu-top-click');
+  document.querySelector('.menu-middle').classList.remove('menu-middle-click');
+  document.querySelector('.menu-bottom').classList.remove('menu-bottom-click');
+};
+
 const headerMenu = document.querySelector('.header__mobile-menu');
 
 if (headerMenu) {
   headerMenu.addEventListener('click', function() {
     document.querySelector('.header').classList.toggle('header--open');
 
-    document.querySelector('.menu-top').classList.toggle('menu-top-click');
-    document
-      .querySelector('.menu-middle')
-      .classList.toggle('menu-middle-click');
-    document
-      .querySelector('.menu-bottom')
-      .classList.toggle('menu-bottom-click');
+    toggleMobileMenu();
   });
 }
 
@@ -50,12 +56,13 @@ if (stickyNav) {
   stickyNav.classList.add('header--is-load');
 
   const headerScroll = function() {
-    if (stickyNav && window.innerWidth >= 1) {
+    if (stickyNav && window.innerWidth < 1200) {
       this.scrollY < 10
         ? stickyNav.classList.remove('header--minify')
         : stickyNav.classList.add('header--minify');
     } else {
-      stickyNav.classList.remove('header--minify');
+      stickyNav.classList.remove('header--open');
+      closeMobileMenu();
     }
   };
   headerScroll();

@@ -10,9 +10,9 @@
     max-width: 100% @sm 90% @md 90% @lg 90% @xl 100%
     padding: @xl 35px 39px 47px
     border-radius: @sm-down 0
-    margin-bottom: -140px @sm -140px @md -140px @lg -140px @xl -140px
+    margin-bottom: -140px @sm -140px @md -190px @lg -140px @xl -140px
     position: relative
-    top: -140px @sm -140px @md -140px @lg -140px @xl -140px
+    top: -140px @sm -140px @md -190px @lg -140px @xl -140px
 
     &:before, &:after
       display: none @sm block
@@ -51,13 +51,14 @@
       margin-left: 0 @xl 16px
 
   &__wrap
-    box: space-between center
-    padding: 75px 0 40px @lg 75px 0 40px
-    margin: 0 15px @sm 0 20px @lg 0
+    box: vertical space-between center @sm horizontal
+    padding: 40px 0 35px @sm 75px 0 40px @lg 75px 0 40px
+    margin: 0 15px @sm 0 10px @md 0 20px @lg 0
     border-bottom: 1px rgba(255, 255, 255, .1) solid
 
   &__logo
     @extend .header__logo
+    size: 150px 56px
 
   &__nav
     @extend .header__nav
@@ -67,17 +68,19 @@
       text: 14px
 
   &__socials
+    order: 1 @sm 0
 
     &-link
 
       & + &
-        margin-left: 16px
+        margin-left: 16px @sm 13px @md 16px
 
   &__contacts
-    box: vertical right
+    box: vertical center @sm right
+    margin: 20px 0 30px @sm 0
 
     &-link
-      text: #fff 16px
+      text: #fff 18px @sm 15px @md 16px
       text-decoration: none
 
       & + &
@@ -86,10 +89,10 @@
   &__copy
     box: space-between wrap
     padding: 30px * 30px @xl 40px * 28px
-    margin: 0 15px @sm 0 20px @lg 0
+    margin: 0 15px @sm 0 10px @md 0 20px @lg 0
 
     &-text
-      text: rgba(255, 255, 255, .4) 11px 17px
+      text: rgba(255, 255, 255, .4) 10px 15px @md 11px 17px
       width: 100% @xl 88%
 
     &-wrap
