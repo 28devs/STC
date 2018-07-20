@@ -56,11 +56,13 @@ if (stickyNav) {
   stickyNav.classList.add('header--is-load');
 
   const headerScroll = function() {
-    if (stickyNav && window.innerWidth < 1200) {
+    if (stickyNav) {
       this.scrollY < 10
         ? stickyNav.classList.remove('header--minify')
         : stickyNav.classList.add('header--minify');
-    } else {
+    }
+
+    if (window.innerWidth < 1200) {
       stickyNav.classList.remove('header--open');
       closeMobileMenu();
     }
