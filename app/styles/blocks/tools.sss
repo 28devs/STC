@@ -9,7 +9,6 @@
     color: #fff
     line-height: @md-down 29px
     
-
   &__sub-title
     color: #fff
     text-align: left @md center
@@ -27,6 +26,10 @@
     box-sizing: border-box
     cursor: @md-down pointer
 
+    @each $i in (1,2,3,4)
+      &:nth-of-type($i) ^&__img
+        background: svg-load('tools/icon-$i.svg') no-repeat center / contain
+
   &__img
     margin-left: auto @lg 0
     margin-right: auto @lg 30px
@@ -34,16 +37,11 @@
     float: left @md none @lg left
     size: 60px @md 100px
 
-  @each $i in (1,2,3,4)
-    &__img:nth-of-type($(i))
-      background: svg-load('tools/icon-$(i).svg') no-repeat center / contain
-
   &__item-title
     text: #0AAEFA 24px * 500
     margin-left: 80px @md 0 @lg 130px
     text-align: left @md center @lg left
     padding-top: @md-down 12px
-    
     
     &:after 
       display: block @md none
