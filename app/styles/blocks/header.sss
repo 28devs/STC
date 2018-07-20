@@ -1,0 +1,131 @@
+.header
+  padding: 20px 0
+  position: fixed 0 0 null 0
+  z-index: 9
+  transition: $transition
+
+  &:before, &:after
+    visibility: hidden
+    transform: translateY(0)
+    width: 100%
+
+  &:before
+    background: linear-gradient(309.51deg, #0DD0FB -3.25%, #036FF5 83.47%)
+
+  &:after
+    background: linear-gradient(309.51deg, #0DD0FB -8.06%, #036FF5 82.7%)
+
+  &--minify
+    background: linear-gradient(10.54deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
+    padding: 9px 0 10px
+
+    ^&__logo
+      size: 118px 45px
+      margin-right: 82px
+
+    ^&__nav
+
+      &-link
+        &:hover
+          text: $primary
+
+        &--active
+          text: $primary
+
+          &:after
+            content: ''
+            display: block
+            height: 4px
+            background: $primary
+            transform: translateY(20px)
+
+  &--open
+    background: linear-gradient(309.51deg, #0DD0FB 1.14%, #036FF5 84.17%)
+    padding-bottom: 85px
+    border-radius: 0px 0px 5px 5px
+
+    &:before, &:after
+      visibility: visible
+      transition: .5s ease
+
+    &:before
+      transform: translateY(10px)
+      width: calc(100% - 40px)
+
+    &:after
+      transform: translateY(20px)
+      width: calc(100% - 80px)
+
+    ^&__nav
+      visibility: visible
+
+      &-link
+        text: 500 24px
+        opacity: 1
+        transform: translateY(0)
+        transition: transform .4s ease, opacity .3s ease
+
+        &:nth-child(2)
+          transition-delay: .05s
+        &:nth-child(3)
+          transition-delay: .08s
+        &:nth-child(4)
+          transition-delay: .11s
+        &:nth-child(5)
+          transition-delay: .13s
+        &:nth-child(6)
+          transition-delay: .15s
+
+        &:hover
+          text: #fff
+
+        &--active
+          text: #fff
+
+          &:after
+            content: ''
+            display: block
+            height: 4px
+            background: #fff
+            transform: translateY(20px)
+
+    ^&__mobile-menu
+      background: svg-load('icons/close.svg') no-repeat center
+
+  &__container
+    box: center space-between
+    max-width: @lg-down 100%
+
+  &__logo
+    size: 121px 45px @sm 139px 53px @md 200px 75px
+    background: resolve('logo.png') no-repeat center / contain
+    transition: $transition
+
+  &__nav
+    box: middle
+    visibility: hidden @xl visible
+    position: absolute null 0 10px 0 @xl static
+
+    &-link
+      text: #fff 16px
+      text-decoration: none
+      display: block
+      padding: 10px
+      opacity: 0 @xl 1
+      transform: translateY(-15px) @xl none
+
+      & + &
+        margin-left: 18px
+
+  &__btn
+    margin-left: auto @xl 0
+    display: @sm-down none
+
+  &__mobile-menu
+    display: block @xl none
+    background: svg-load('icons/mobile-menu.svg')
+    size: size('icons/mobile-menu.svg')
+    border: 0
+    outline: 0
+    cursor: pointer
+    margin-left: 50px @lg 100px

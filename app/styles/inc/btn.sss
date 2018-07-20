@@ -1,17 +1,23 @@
 .btn
   padding: 15px 60px 16px
-  text: #fff bold 16px 23px
+  text: #fff center bold 16px 23px
   text-decoration: none
   font-family: $ff
   border: 0
   outline: 0
   cursor: pointer
-  transition: box-shadow .04s ease, background $transition
+  transition: box-shadow .04s ease, background $transition, color $transition
   border-radius: 30px
   background: linear-gradient(180deg, #147DFF 0%, #036FF5 100%)
   box-shadow: 0 20px 30px rgba(3, 111, 245, 0.3)
   display: inline-block
   user-select: none
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+  &:before, &:after
+    transition: $transition
 
   &:hover
     background: linear-gradient(180deg, #3791FF 0%, #2184FF 100%)
@@ -32,11 +38,11 @@
       background: linear-gradient(180deg, #00BD5F 0%, #00E773 100%)
 
   &--small
-    padding: 8px 44px 9px
+    padding: 10px 44px 11px
+    height: 44px
     text: $primary 500 14px
-    border: 2px solid $primary
+    box-shadow: inset 0 0 0 2px $primary
     background: transparent
-    box-shadow: none
 
     &:hover
       background: $primary
@@ -46,7 +52,7 @@
       box-shadow: inset 0px 3px 0px #005ED4
 
     &^&--secondary
-      border-color: $secondary
+      box-shadow: inset 0 0 0 2px $secondary
       text: $secondary
 
       &:hover
@@ -57,7 +63,7 @@
         box-shadow: inset 0px 3px 0px #009249
 
     &^&--gray
-      border-color: $gray
+      box-shadow: inset 0 0 0 2px $gray
       text: $gray
 
       &:hover
@@ -66,3 +72,98 @@
 
       &:active
         box-shadow: inset 0px 3px 0px #727272
+
+    &^&--white
+      box-shadow: inset 0 0 0 2px #fff
+      text: #fff 500
+
+      &:hover
+        background: #fff
+        text: $primary
+
+      &:active
+        box-shadow: inset 0px 3px 0px #E4E4E4
+
+  &--icon-play
+    padding-right: 23px @sm 29px
+    padding-left: 21px @sm 24px
+
+    &:before
+      content: ''
+      display: inline-block
+      margin-right: 12px @sm 14px
+      background: svg-load('icons/play.svg' fill: #fff)
+      size: size('icons/play.svg')
+
+    &:hover:before
+      background: svg-load('icons/play.svg' fill: $primary)
+
+  &--icon-dollar
+    padding: 0 0 0 25px
+
+    &:after
+      content: ''
+      display: inline-block
+      background: #fff svg-load('icons/dollar.svg' fill: $primary) no-repeat center
+      size: 44px
+      border-radius: 40px
+      margin: -2px -3px -2px -2px
+      margin-left: 20px
+
+    &:hover:after
+      background: $primary svg-load('icons/dollar.svg' fill: #fff) no-repeat center
+
+  &--circle
+    background: linear-gradient(180deg, #147DFF 0%, #036FF5 100%)
+    box-shadow: 0px 7px 15px rgba(3, 111, 245, 0.3)
+    size: 42px
+    padding: 0
+    justify-content: center
+
+  &--icon-vk
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/vk.svg' fill: #fff)
+      size: size('icons/vk.svg')
+
+  &--icon-in
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/in.svg' fill: #fff)
+      size: size('icons/in.svg')
+
+  &--icon-fb
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/fb.svg' fill: #fff)
+      size: size('icons/fb.svg')
+
+  &--icon-video
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/play.svg' fill: #fff)
+      size: size('icons/play.svg')
+
+  &--xl
+    size: 110px
+    border-radius: 100px
+
+    &:before
+      size: 24px 28px
+      background-size: contain
+      background-repeat: no-repeat
+      margin-right: -5px
+
+  &--echo
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      position: absolute 0 0 0 0
+      border-radius: 100px
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.1)
