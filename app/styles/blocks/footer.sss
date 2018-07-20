@@ -3,15 +3,16 @@
 
   &__container
     padding: @sm-down * 0
+    max-width: @md-down 100%
 
   &__recall
     @extend .hero__recall
-    max-width: 100% !important
+    max-width: 100% @sm 90% @md 90% @lg 90% @xl 100%
     padding: @xl 35px 39px 47px
     border-radius: @sm-down 0
-    margin-bottom: @xl -140px
+    margin-bottom: -140px @sm -140px @md -140px @lg -140px @xl -140px
     position: relative
-    top: @xl -140px
+    top: -140px @sm -140px @md -140px @lg -140px @xl -140px
 
     &:before, &:after
       display: none @sm block
@@ -28,7 +29,7 @@
 
     &-text
       @extend .hero__recall-text
-      text: 14px @md 18px
+      text: 14px @sm 18px
       padding: * 20px @lg * 10% @xl * 22%
 
     &-form
@@ -51,7 +52,8 @@
 
   &__wrap
     box: space-between center
-    padding: 75px * 40px
+    padding: 75px 0 40px @lg 75px 0 40px
+    margin: 0 15px @sm 0 20px @lg 0
     border-bottom: 1px rgba(255, 255, 255, .1) solid
 
   &__logo
@@ -72,25 +74,28 @@
         margin-left: 16px
 
   &__contacts
-    box: vertical left
+    box: vertical right
 
     &-link
       text: #fff 16px
       text-decoration: none
 
       & + &
-        margin-top: 10px
+        margin-top: 8px
 
   &__copy
-    box: space-between
-    padding: 40px * 28px
+    box: space-between wrap
+    padding: 30px * 30px @xl 40px * 28px
+    margin: 0 15px @sm 0 20px @lg 0
 
     &-text
       text: rgba(255, 255, 255, .4) 11px 17px
-      width: 88%
+      width: 100% @xl 88%
 
     &-wrap
-      box: vertical space-between
+      box: horizontal-reverse space-between @xl vertical right
+      width: 100% @xl 12%
+      margin-top: 20px @xl 0
 
     &-studio
       background: svg-load('icons/studio.svg')
