@@ -7,3 +7,38 @@
 
   &__sub-title
     color: #fff
+    text-align: center
+    margin-top: 21px
+
+  &__inner
+    box: space-between wrap @md nowrap
+    width: initial
+    margin: 28px 0 @md 31px -40px 0 @lg 53px -45px 0
+
+  &__item
+    width: initial @md 50%
+    padding: 40px
+    box-sizing: border-box
+    cursor: @md-down pointer
+
+  &__img
+    margin-left: auto @lg 0
+    margin-right: auto @lg 30px
+    margin-bottom: 30px @lg 0
+    float: none @lg left
+
+  @each $i in (1,2,3,4)
+    &__img:nth-of-type($i)
+      background: svg-load('tools/icon-$(i).svg') no-repeat center / contain
+      size: size('tools/icon-$(i).svg')
+
+  &__item-title
+    text: #0AAEFA 24px * 500
+    margin-left: 0 @lg 130px
+    text-align: left @md center @lg left
+
+  &__item-desc
+    margin-top: 17px
+    text: #fff 14px 16px @md 14px 17px
+    margin-left: 0 @lg 130px
+    text-align: left @md center @lg left
