@@ -1,8 +1,9 @@
 .header
-  padding: 20px 0
+  padding: 9px 0 10px @sm 20px 0
   position: fixed 0 0 null 0
   z-index: 9
   transition: $transition
+  @extend .box--echo
 
   &:before, &:after
     visibility: hidden
@@ -40,9 +41,10 @@
             transform: translateY(20px)
 
   &--open
-    background: linear-gradient(309.51deg, #0DD0FB 1.14%, #036FF5 84.17%)
-    padding-bottom: 85px
-    border-radius: 0px 0px 5px 5px
+    background: linear-gradient(247.35deg, #0DD0FB -39.21%, #036FF5 54.57%) @sm linear-gradient(309.51deg, #0DD0FB 1.14%, #036FF5 84.17%)
+    padding-bottom: 85px @sm 85px
+    border-radius: 0 0 5px 5px
+    height: @sm-down 100vh
 
     &:before, &:after
       visibility: visible
@@ -56,14 +58,24 @@
       transform: translateY(20px)
       width: calc(100% - 80px)
 
+    ^&__btn
+      visibility: @sm-down visible
+      transition: @sm-down transform .4s ease, opacity .3s ease
+      opacity: @sm-down 1
+      transform: @sm-down translate(-50%, 0)
+      transition-delay: @sm-down .1s
+
     ^&__nav
       visibility: visible
+      margin: @sm-down * 15px
 
       &-link
-        text: 500 24px
+        text: 400 center 20px @sm 500 @md 24px
         opacity: 1
         transform: translateY(0)
         transition: transform .4s ease, opacity .3s ease
+        padding: @sm-down 20px
+        border-bottom: @sm-down 1px solid rgba(255, 255, 255, .15)
 
         &:nth-child(2)
           transition-delay: .05s
@@ -76,15 +88,17 @@
         &:nth-child(6)
           transition-delay: .15s
 
-        &:hover
+        &:hover:not(.header__nav-link--active)
           text: #fff
+          background: @sm-down rgba(255, 255, 255, .07)
 
         &--active
           text: #fff
+          background: @sm-down rgba(255, 255, 255, .1)
 
           &:after
             content: ''
-            display: block
+            display: none @sm block
             height: 4px
             background: #fff
             transform: translateY(20px)
@@ -97,14 +111,14 @@
     max-width: @lg-down 100%
 
   &__logo
-    size: 121px 45px @sm 139px 53px @md 200px 75px
+    size: 118px 45px @sm 139px 53px @md 200px 75px
     background: resolve('logo.png') no-repeat center / contain
     transition: $transition
 
   &__nav
-    box: middle
+    box: vertical @sm horizontal center
     visibility: hidden @xl visible
-    position: absolute null 0 10px 0 @xl static
+    position: absolute 100px 0 auto 0 @sm absolute auto 0 10px 0 @xl static
 
     &-link
       text: #fff 16px
@@ -115,11 +129,15 @@
       transform: translateY(-15px) @xl none
 
       & + &
-        margin-left: 18px
+        margin-left: 0 @sm 14px @md 18px
 
   &__btn
     margin-left: auto @xl 0
-    display: @sm-down none
+    position: @sm-down absolute null null 20px 50%
+    transform: @sm-down translate(-50%, -20px)
+    white-space: nowrap
+    opacity: @sm-down 0
+    visibility: @sm-down hidden
 
   &__mobile-menu
     display: block @xl none
