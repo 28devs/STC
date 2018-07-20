@@ -1,0 +1,101 @@
+.footer
+  background: #091128
+
+  &__container
+    padding: @sm-down * 0
+
+  &__recall
+    @extend .hero__recall
+    max-width: 100% !important
+    padding: @xl 35px 39px 47px
+    border-radius: @sm-down 0
+    margin-bottom: @xl -140px
+    position: relative
+    top: @xl -140px
+
+    &:before, &:after
+      display: none @sm block
+
+    &:before
+      opacity: .2
+
+    &:after
+      opacity: .1
+
+    &-title
+      @extend .hero__recall-title
+      text: 24px @md 30px @lg 36px
+
+    &-text
+      @extend .hero__recall-text
+      text: 14px @md 18px
+      padding: * 20px @lg * 10% @xl * 22%
+
+    &-form
+      box: middle @xl-down wrap
+      max-width: 370px @lg 80% @xl 100%
+      margin: * auto
+
+    &-input
+      width: 100% @lg 280px
+
+      & + &
+        margin-top: 10px @sm 16px @lg 0
+        margin-left: 0 @lg 16px
+
+    &-btn
+      padding: * 23px
+      width: 100% @lg auto
+      margin-top: 10px @sm 16px @xl 0
+      margin-left: 0 @xl 16px
+
+  &__wrap
+    box: space-between center
+    padding: 75px * 40px
+    border-bottom: 1px rgba(255, 255, 255, .1) solid
+
+  &__logo
+    @extend .header__logo
+
+  &__nav
+    @extend .header__nav
+
+    &-link
+      @extend .header__nav-link
+      text: 14px
+
+  &__socials
+
+    &-link
+
+      & + &
+        margin-left: 16px
+
+  &__contacts
+    box: vertical left
+
+    &-link
+      text: #fff 16px
+      text-decoration: none
+
+      & + &
+        margin-top: 10px
+
+  &__copy
+    box: space-between
+    padding: 40px * 28px
+
+    &-text
+      text: rgba(255, 255, 255, .4) 11px 17px
+      width: 88%
+
+    &-wrap
+      box: vertical space-between
+
+    &-studio
+      background: svg-load('icons/studio.svg')
+      size: size('icons/studio.svg')
+      display: block
+
+    &-right
+      text: rgba(255, 255, 255, .8) 10px 14px
