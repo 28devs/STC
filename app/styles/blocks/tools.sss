@@ -28,7 +28,7 @@
     float: none @lg left
 
   @each $i in (1,2,3,4)
-    &__img:nth-of-type($i)
+    &__img:nth-of-type($(i))
       background: svg-load('tools/icon-$(i).svg') no-repeat center / contain
       size: size('tools/icon-$(i).svg')
 

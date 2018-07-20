@@ -44,6 +44,6 @@
     text-align: center
 
   @each $i in (1,2,3,4,5,6)
-    &__img:nth-of-type($i)
+    &__img:nth-of-type($(i))
       background: svg-load('services/icon-$(i).svg') no-repeat center / contain
       size: size('services/icon-$(i).svg')
