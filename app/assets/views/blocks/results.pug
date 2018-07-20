@@ -7,22 +7,28 @@ section.results.block
 
     .results__slider
       .glide
-        .block-inner
-          .results__inner.glide__track(data-glide-el='track')
-            .glide__slides
-              each item in result
+        
+        .results__inner.block-inner.glide__track(data-glide-el='track')
+          .glide__slides
+            each item in result
 
-                .glide__slide
-                  .results__item
-                    .results__legend
-                      .results__person= item.name
-                      .results__legend-desc= item.desc
+              .glide__slide
+                .results__item
+                  .results__legend
+                    .results__person= item.name
+                    .results__legend-desc= item.desc
 
-                      a.results__link(href="#!") Смотреть результат
+                    a.results__link(href="#!") Смотреть результат
 
-                    .results__graph
-                      img(src='img/results/graph-' + item.graph + '.svg')
+                  .results__graph
+                    img(src='img/results/graph-' + item.graph + '.svg')
 
-          .glide__panel
-            .
-            .glide__bullets.glide__bullets(data-glide-el='controls[nav]')
+        .glide__panel
+          .glide__count
+            span.glide__count-current 2
+            span  / 
+            span.glide__count-all 10
+          .glide__bullets.glide__bullets(data-glide-el='controls[nav]')
+          .glide__arrows(data-glide-el='controls')
+            button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+            button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')

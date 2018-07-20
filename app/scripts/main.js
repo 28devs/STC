@@ -8,8 +8,9 @@ const sliderDotBlocks = document.querySelectorAll(
 
 if (sliderDotBlocks) {
   sliderDotBlocks.forEach(function(dotBlock) {
-    let sliderSlides = dotBlock.parentNode.querySelector('.glide__slides');
-
+    // console.log(dotBlock)
+    let sliderSlides = dotBlock.parentNode.parentNode.querySelector('.glide__slides');
+    console.log(sliderSlides)
     for (let i = 0; i < sliderSlides.children.length; i++) {
       let sliderDot = document.createElement('div');
       sliderDot.classList.add('glide__bullet');
@@ -129,15 +130,15 @@ if (resultSlider) {
   });
 
   resultSliderG.on('move', function() {
-    // let bullets = document.querySelectorAll('.glide__bullet');
-    // bullets.forEach(function(elem) {
-    //   elem.classList.remove('glide__bullet--active');
-    // });
+    let bullets = document.querySelectorAll('.glide__bullet');
+    bullets.forEach(function(elem) {
+      elem.classList.remove('glide__bullet--active');
+    });
 
-    // let activeBullet = document.querySelector(
-    //   '.glide__bullet[data-glide-dir="=' + resultSliderG.index + '"]'
-    // );
-    // activeBullet.classList.add('glide__bullet--active');
+    let activeBullet = document.querySelector(
+      '.glide__bullet[data-glide-dir="=' + resultSliderG.index + '"]'
+    );
+    activeBullet.classList.add('glide__bullet--active');
   });
 
   resultSliderG.mount();
