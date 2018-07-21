@@ -29,9 +29,8 @@ const sliderDotBlocks = document.querySelectorAll(
 
 if (sliderDotBlocks) {
   sliderDotBlocks.forEach(function(dotBlock) {
-    let parentNode = dotBlock.parents('.glide');
-    console.log(parentNode)
-    let sliderSlides = dotBlock.parentNode.parentNode.querySelector('.glide__slides');
+    let prentNode = dotBlock.parents('.glide')[0];
+    let sliderSlides = prentNode.querySelector('.glide__slides');
 
     for (let i = 0; i < sliderSlides.children.length; i++) {
       let sliderDot = document.createElement('div');
@@ -158,11 +157,13 @@ if (resultSlider) {
     bullets.forEach(function(elem) {
       elem.classList.remove('glide__bullet--active');
     });
-    // console.log(resultSliderG.selector)
     let activeBullet = prentsNode.querySelector(
       '.glide__bullet[data-glide-dir="=' + resultSliderG.index + '"]'
     );
     activeBullet.classList.add('glide__bullet--active');
+
+    let currentCount = prentsNode.querySelector('.glide__count-current');
+    currentCount.innerHTML = resultSliderG.index + 1;
   });
 
   resultSliderG.mount();

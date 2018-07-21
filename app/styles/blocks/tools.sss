@@ -3,9 +3,8 @@
               url('../img/tools/right-shape.svg') no-repeat bottom right -10vw / contain,
               linear-gradient(65.95deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
 
-  background-position: @xl-down top left, bottom -40vh right -50vw           
-  background-position: @lg-down top left, bottom -50vh right -80vw           
-  background-position: @md-down top left, bottom 60vh right -80vw           
+  background-position: top left, bottom 0 right -80vw  @lg top left, bottom -50vh right -80vw  @xl top left, bottom -40vh right -50vw           
+          
 
   &__title
     text-align: left @md center
@@ -27,7 +26,6 @@
     width: initial @md 50%
     padding: 14px 0 @md 22px 40px @lg 40px
     box-sizing: border-box
-    cursor: @md-down pointer
 
     @each $i in (1,2,3,4)
       &:nth-of-type($i) ^&__img
