@@ -1,4 +1,25 @@
 //
+//jquery parents() pure js
+
+Element.prototype.parents = function(selector) {
+  var elements = [];
+  var elem = this;
+  var ishaveselector = selector !== undefined;
+
+  while ((elem = elem.parentElement) !== null) {
+      if (elem.nodeType !== Node.ELEMENT_NODE) {
+          continue;
+      }
+
+      if (!ishaveselector || elem.matches(selector)) {
+          elements.push(elem);
+      }
+  }
+
+  return elements;
+};
+
+//
 // Dots generate for sliders
 //
 
@@ -8,9 +29,10 @@ const sliderDotBlocks = document.querySelectorAll(
 
 if (sliderDotBlocks) {
   sliderDotBlocks.forEach(function(dotBlock) {
-    // console.log(dotBlock)
+    let parentNode = dotBlock.parents('.glide');
+    console.log(parentNode)
     let sliderSlides = dotBlock.parentNode.parentNode.querySelector('.glide__slides');
-    console.log(sliderSlides)
+
     for (let i = 0; i < sliderSlides.children.length; i++) {
       let sliderDot = document.createElement('div');
       sliderDot.classList.add('glide__bullet');
@@ -91,12 +113,13 @@ if (servicesSlider) {
         });
 
         servicesSliderInit.on('move', function() {
-          let bullets = document.querySelectorAll('.glide__bullet');
+          let prentsNode = servicesSliderInit.selector;
+          let bullets = prentsNode.querySelectorAll('.glide__bullet');
           bullets.forEach(function(elem) {
             elem.classList.remove('glide__bullet--active');
           });
 
-          let activeBullet = document.querySelector(
+          let activeBullet = prentsNode.querySelector(
             '.glide__bullet[data-glide-dir="=' + servicesSliderInit.index + '"]'
           );
           activeBullet.classList.add('glide__bullet--active');
@@ -130,12 +153,13 @@ if (resultSlider) {
   });
 
   resultSliderG.on('move', function() {
-    let bullets = document.querySelectorAll('.glide__bullet');
+    let prentsNode = resultSliderG.selector;
+    let bullets = prentsNode.querySelectorAll('.glide__bullet');
     bullets.forEach(function(elem) {
       elem.classList.remove('glide__bullet--active');
     });
-
-    let activeBullet = document.querySelector(
+    // console.log(resultSliderG.selector)
+    let activeBullet = prentsNode.querySelector(
       '.glide__bullet[data-glide-dir="=' + resultSliderG.index + '"]'
     );
     activeBullet.classList.add('glide__bullet--active');

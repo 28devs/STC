@@ -1,8 +1,11 @@
 .tools
   background: url('../img/tools/left-shape.svg') no-repeat top left,
-              url('../img/tools/right-shape.svg') no-repeat bottom right / contain,
+              url('../img/tools/right-shape.svg') no-repeat bottom right -10vw / contain,
               linear-gradient(65.95deg, #050E26 0%, #0B2265 86.36%, #0B2265 86.36%)
-              
+
+  background-position: @xl-down top left, bottom -40vh right -50vw           
+  background-position: @lg-down top left, bottom -50vh right -80vw           
+  background-position: @md-down top left, bottom 60vh right -80vw           
 
   &__title
     text-align: left @md center
