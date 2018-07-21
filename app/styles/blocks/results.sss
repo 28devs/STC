@@ -4,6 +4,17 @@
               url('../img/results/right-shape.svg') no-repeat bottom right
   padding-bottom: @sm-down 80px
 
+  &__slider.box--echo
+    
+    &:after
+      background-color: #C1C1C1
+      opacity: .2
+      z-index: -1
+      top: -30px
+      border-radius: 5px
+      bottom: 0
+      height: auto
+
   &__title
     text-align: center
     text: @lg-down #fff
@@ -11,7 +22,7 @@
   &__sub-title
     text-align: center
     text: @md-down 16px 18px
-    text: @lg-down #fff 16px 18px
+    text: @lg-down #fff 
 
   &__inner
     background: #fff
