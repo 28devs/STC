@@ -1,6 +1,7 @@
 .why
-  background: url('../img/why/shape.svg') no-repeat left top / contain
-  background: @md-down radial-gradient(466.47px at 83.19% 13.86%, #0DD0FB 0%, #036FF5 100%)
+  background: radial-gradient(466.47px at 83.19% 13.86%, #0DD0FB 0%, #036FF5 100%) @md url('../img/why/shape-lg.svg') no-repeat left top / contain @xl url('../img/why/shape.svg') no-repeat left top / contain
+  padding-bottom: 40px  @md 400px @lg 400px
+
   &__inner
     box: middle 
     flex-wrap: wrap @xl nowrap
@@ -96,6 +97,9 @@
     .glide__track
       margin-bottom: 20px
       border-radius: 5px
+
+    .glide__slide
+      height: auto
 
     ^&__item
       height: 100%

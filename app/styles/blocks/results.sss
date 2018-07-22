@@ -14,6 +14,10 @@
       border-radius: 5px
       bottom: 0
       height: auto
+      display: @sm-down none
+    
+    &:before
+      display: @sm-down none
 
   &__title
     text-align: center
@@ -21,6 +25,7 @@
 
   &__sub-title
     text-align: center
+    margin-top: 14px @md 21px
     text: @md-down 16px 18px
     text: @lg-down #fff 
 
