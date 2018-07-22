@@ -1,5 +1,5 @@
 section.offices#offices
-  h1.offices__title.h1 Офисы STC
+  h1.offices__title.h1.easeBox Офисы STC
 
   .offices__container.container
 
@@ -11,7 +11,7 @@ section.offices#offices
       .glide__track(data-glide-el='track')
         .glide__slides
           each office, i in offices
-            .glide__slide.offices__slide
+            .glide__slide.offices__slide.easeBox
               .offices__item
                 .offices__item-img(class='offices__item-img--' + (i+1))
 

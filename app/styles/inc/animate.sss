@@ -1,8 +1,12 @@
-.services__inner .glide__slides
-  perspective: 1000px
-  
+.services__inner 
+  .glide__slides
+    perspective: 1000px
+
+  .glide__slides
+    overflow: @lg visible
+
 .easeBox 
-  transform: translateY(var(--ty)) scale(var(--scale)) rotateX(var(--rotate))
+  transform: translateY(var(--ty)) scale(var(--scale))
   opacity: var(--op)
   transition: .5s ease
   will-change: transform, opacity
@@ -23,4 +27,18 @@
     transition-delay: .17s
   &:nth-child(9)
     transition-delay: .19s
+  &:nth-child(9)
+    transition-delay: .21s
+  &:nth-child(9)
+    transition-delay: .23s
+  &:nth-child(9)
+    transition-delay: .25s
+  &:nth-child(9)
+    transition-delay: .27s
+  &:nth-child(9)
+    transition-delay: .29s
+  &:nth-child(9)
+    transition-delay: .31s
+  &:nth-child(9)
+    transition-delay: .33s
   

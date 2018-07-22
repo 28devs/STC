@@ -1,6 +1,6 @@
 section.team#team
   .team__container.container
-    h1.team__title.h1 Наша команда
+    h1.team__title.h1.easeBox Наша команда
 
       .team__slider-prev.btn.btn--slider.btn--icon-prev
       .team__slider-next.btn.btn--slider.btn--icon-next
@@ -9,7 +9,7 @@ section.team#team
       .glide__track(data-glide-el='track')
         .glide__slides.team__slides
           each item, i in team
-            .glide__slide.team__slide
+            .glide__slide.team__slide.easeBox
               .team__item
                 .team__item-img(class='team__item-img--' + (i+1))
                 .team__item-title= item.title
