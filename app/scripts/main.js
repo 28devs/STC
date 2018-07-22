@@ -146,7 +146,6 @@ if (servicesSlider) {
   window.addEventListener('resize', servicesSliderFn);
 }
 
-
 //
 // why slider
 //
@@ -415,3 +414,42 @@ if (forms.length) {
     form.addEventListener('submit', formSubmitFn);
   });
 }
+
+//
+// Animate
+//
+
+const easeBoxes = [];
+
+// Create an animation for each ease box. Each with a different timing.
+document.querySelectorAll('.easeBox').forEach((elem, i) => {
+  // Crate an instance for the current element and store the instance in an array.
+  // We start the animation later using the instances from the array.
+  easeBoxes.push(
+    basicScroll.create({
+      elem: elem,
+      from: 'middle-bottom',
+      to: 'top-middle',
+      direct: true,
+      props: {
+        '--ty': {
+          from: '100px',
+          to: '0',
+          timing: 'linear'
+        },
+        '--op': {
+          from: '0',
+          to: '1',
+          timing: 'linear'
+        },
+        '--scale': {
+          from: '.8',
+          to: '1',
+          timing: 'linear'
+        }
+      }
+    })
+  );
+});
+
+easeBoxes.forEach(easeBox => easeBox.start());
