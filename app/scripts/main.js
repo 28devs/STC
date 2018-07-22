@@ -219,7 +219,7 @@ if (officesSlider) {
 }
 
 //
-//
+// Gallery show more img btn
 //
 
 const galleryBtn = document.querySelector('.gallery__btn');
@@ -231,4 +231,66 @@ if (galleryBtn) {
     galleryBlock.classList.remove('gallery--mobile-hide');
     galleryBtn.style.display = 'none';
   });
+}
+
+//
+// Team slider
+//
+
+const teamSlider = document.querySelector('.team__slider');
+
+if (teamSlider) {
+  var teamSliderInit = false;
+  const teamSliderPrev = document.querySelector('.team__slider-prev');
+  const teamSliderNext = document.querySelector('.team__slider-next');
+
+  teamSliderPrev.addEventListener('click', function() {
+    teamSliderInit.go('<');
+  });
+
+  teamSliderNext.addEventListener('click', function() {
+    teamSliderInit.go('>');
+  });
+
+  const teamSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!teamSliderInit) {
+        teamSliderInit = new Glide(teamSlider, {
+          perView: 2,
+          bound: true,
+          gap: 20,
+          peek: 20,
+          breakpoints: {
+            439: {
+              perView: 1
+            }
+          }
+        });
+
+        teamSliderInit.on('move', function() {
+          let prentsNode = teamSliderInit.selector;
+          let bullets = prentsNode.querySelectorAll('.glide__bullet');
+          bullets.forEach(function(elem) {
+            elem.classList.remove('glide__bullet--active');
+          });
+
+          let activeBullet = prentsNode.querySelector(
+            '.glide__bullet[data-glide-dir="=' + teamSliderInit.index + '"]'
+          );
+          activeBullet.classList.add('glide__bullet--active');
+        });
+
+        teamSliderInit.mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof teamSliderInit === 'object') {
+        teamSliderInit.destroy();
+        teamSliderInit = false;
+      }
+    }
+  };
+
+  teamSliderFn();
+  window.addEventListener('resize', teamSliderFn);
 }

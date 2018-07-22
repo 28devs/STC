@@ -148,6 +148,21 @@
       background: svg-load('icons/play.svg' fill: #fff)
       size: size('icons/play.svg')
 
+  &--icon-prev
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/arrow.svg')
+      size: size('icons/arrow.svg')
+      transform: scale(-1)
+
+  &--icon-next
+    &:before
+      content: ''
+      display: block
+      background: svg-load('icons/arrow.svg')
+      size: size('icons/arrow.svg')
+
   &--xl
     size: 110px
     border-radius: 100px
@@ -167,3 +182,17 @@
       position: absolute 0 0 0 0
       border-radius: 100px
       box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2), 0 0 0 20px rgba(255, 255, 255, 0.1)
+
+  &--slider
+    background: #FFFFFF
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+    size: 52px
+    padding: 0
+
+    &:hover
+      background: #FFFFFF
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07)
+
+    &:active
+      background: #FFFFFF
+      box-shadow: 0px 3px 17px rgba(0, 0, 0, 0.07)
