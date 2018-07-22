@@ -3,8 +3,9 @@ section.why.block
 
   .container
     h1.why__title.h1 Почему именно мы?
+
     .why__inner
-      <canvas class="why__dots js-canvas"></canvas>
+      <canvas class="why__dots js-canvas easeBox"></canvas>
 
       .why__text-col
         .why__desc-wrap
@@ -16,7 +17,6 @@ section.why.block
           .why__item
             .why__item-title= item.title
             .why__item-desc= item.desc
-
 
       .why__triple-col
         each item in whyTriple
