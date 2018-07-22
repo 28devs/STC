@@ -22,3 +22,24 @@ section.why.block
             .why__item-title= item.title
             .why__item-desc= item.desc
 
+    .why__slider
+      .glide
+        
+        .glide__track(data-glide-el='track')
+          
+          .glide__slides
+            each item in whyDouble
+              .glide__slide
+                .why__item.why__item--slide
+                  .why__item-title= item.title
+                  .why__item-desc= item.desc
+
+            each item in whyTriple
+              .glide__slide
+                .why__item.why__item--slide
+                  .why__item-title= item.title
+                  .why__item-desc= item.desc
+            
+        .glide__bullets.glide__bullets--only-sm.glide__bullets--lighter-md(data-glide-el='controls[nav]')
+    
+

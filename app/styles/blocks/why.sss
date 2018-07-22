@@ -1,10 +1,10 @@
 .why
   background: url('../img/why/shape.svg') no-repeat left top / contain
-
+  background: @md-down radial-gradient(466.47px at 83.19% 13.86%, #0DD0FB 0%, #036FF5 100%)
   &__inner
     box: middle 
     flex-wrap: wrap @xl nowrap
-    margin-right: -30px @xl 0
+    margin: 0 @md 0 -40px 0 -20px @xl 0
 
   &__title
     text: #fff
@@ -14,38 +14,41 @@
 
   &__text-col
     margin-top: 0 @xl 10px
-    width: @xl-down 33.33333%
+    width: 100% @md 33.33333% @xl initital
     min-width: @xl-down 33.33333%
     padding-right: @xl-down 30px
     box-sizing: @xl-down border-box
+    margin-bottom: @md-down 25px
 
   &__desc-wrap
-    box: vertical stretch 
+    box: horizontal middle @md vertical stretch 
 
   &__five
     margin-bottom: 0 @md 17px @xl 19px
     margin-left: 0 @md auto @xl -40px
-    margin-right: auto @xl initial
-    width: 125px @xl initial
+    margin-right: 15px @md auto @xl initial
+    width: 75px @md 125px @xl initial
   
   &__desc
     text: #fff 16px 17px 700  @md 18px 22px @xl 24px 30px
     text-shadow: 0px 10px 24px rgba(0, 38, 86, 0.2)
+    text-align: left @md center @xl left
 
   &__double-col, &__triple-col
     box: horizontal stretch center @xl vertical middle center
     width: 65%
     margin-top: 0 @xl -200px
+    display: @md-down none
 
   &__double-col
     padding-right: 0 @xl 30px
     margin-left: 0 @xl 4vw
     box-sizing: border-box
-    width: @xl-down 66.33333% 
-    min-width: @xl-down 66.33333%
+    width: 66.33333% @xl 65%
+    min-width: 66.33333% @xl initial
 
     ^&__item
-      width: @xl-down 50%
+      width: 44% @lg 50% @xl initial
       margin-right: @xl-down 30px
 
     @each $i in 1, 2
@@ -80,9 +83,34 @@
 
   &__item-title
     text: 18px 21px 700
-    margin-bottom: 10px @md 28px @xl 21px
+    margin-bottom: 10px @md 16px @xl 21px
     width: 85% @xl 75%
 
   &__item-desc
     text: 14px 16px @md 14px 17px
     width: 85% @xl 75%
+  
+  &__slider
+    display: block @md none
+
+    .glide__track
+      margin-bottom: 20px
+      border-radius: 5px
+
+    ^&__item
+      height: 100%
+
+      &:nth-child(1)
+        background-image: url('../img/why/doubl-1.svg')
+
+      &:nth-child(2)
+        background-image: url('../img/why/doubl-2.svg')
+
+      &:nth-child(3)
+        background-image: url('../img/why/triple-1.svg')
+
+      &:nth-child(4)
+        background-image: url('../img/why/triple-2.svg')
+
+      &:nth-child(5)
+        background-image: url('../img/why/triple-3.svg')

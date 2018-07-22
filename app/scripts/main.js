@@ -139,6 +139,51 @@ if (servicesSlider) {
   window.addEventListener('resize', servicesSliderFn);
 }
 
+
+//
+// why slider
+//
+
+const whySlider = document.querySelector('.why__slider .glide');
+
+if (whySlider) {
+  var whySliderInit = false;
+
+  const whySliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!whySliderInit) {
+        whySliderInit = new Glide(whySlider, {
+          perView: 1
+        });
+
+        whySliderInit.on('move', function() {
+          let prentsNode = whySliderInit.selector;
+          let bullets = prentsNode.querySelectorAll('.glide__bullet');
+          bullets.forEach(function(elem) {
+            elem.classList.remove('glide__bullet--active');
+          });
+
+          let activeBullet = prentsNode.querySelector(
+            '.glide__bullet[data-glide-dir="=' + whySliderInit.index + '"]'
+          );
+          activeBullet.classList.add('glide__bullet--active');
+        });
+
+        whySliderInit.mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof whySliderInit === 'object') {
+        whySliderInit.destroy();
+        whySliderInit = false;
+      }
+    }
+  };
+
+  whySliderFn();
+  window.addEventListener('resize', whySliderFn);
+}
+
 //
 // Result slider
 //

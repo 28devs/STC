@@ -9,6 +9,22 @@
     &--only-sm
       display: flex @md none
 
+    &--lighter-sm
+
+      ^^&__bullet
+        background-color: @sm-down rgba(255, 255, 255, .3)
+
+        &:hover, &--active
+          background-color: @sm-down rgba(255, 255, 255, 1)
+
+    &--lighter-md
+
+      ^^&__bullet
+        background-color: @md-down rgba(255, 255, 255, .3)
+
+        &:hover, &--active
+          background-color: @md-down rgba(255, 255, 255, 1)
+
   &__bullet
     size: 6px
     margin-right: 14px
@@ -22,6 +38,12 @@
 
     &--active
       background-color: #818181
+  
+    &--lighter
+      background-color: @sm-down rgba(255, 255, 255, .3)
+
+      &:hover, &--active
+        background-color: @sm-down rgba(255, 255, 255, 1)
 
   //panel for all functional
   
