@@ -9,24 +9,16 @@ var PI2 = Math.PI * 2,
   circleDiameter = 40,
   circleRadius = circleDiameter * 0.5,
   circleSpacing = 5,
-  rotateSpeed = 0.02,
+  rotateSpeed = 0.007,
   showCircles = false,
   showDebugColors = false,
   // calculate rows & cols
   numCols = Math.round(canvasWidth / (circleRadius + circleSpacing) - 5),
-  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing) - 5),
-  // vars for test colors
-  count = numRows * 2,
-  colors = [];
+  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing) - 5);
 
 // set canvas size
 canvas.setAttribute('width', canvasWidth);
 canvas.setAttribute('height', canvasHeight);
-
-// set debug colors
-while (count--) {
-  colors.push('#' + (((1 << 24) * Math.random()) | 0).toString(16));
-}
 
 function Circle(x, y, radius, angle, color) {
   this.x = x;
@@ -79,7 +71,7 @@ function createCircles() {
       // get starting angle for the dot
       angle = getAngle(diagonal);
 
-      circle = new Circle(x, y, circleRadius, angle, colors[diagonal]);
+      circle = new Circle(x, y, circleRadius, angle, '');
       circle.draw(ctx);
 
       circles.push(circle);
@@ -109,7 +101,6 @@ function run() {
     circle = circles[i];
     circle.update();
     circle.draw(ctx);
-    //console.log(1);
   }
 }
 
