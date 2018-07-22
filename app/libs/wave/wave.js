@@ -9,12 +9,12 @@ var PI2 = Math.PI * 2,
   circleDiameter = 40,
   circleRadius = circleDiameter * 0.5,
   circleSpacing = 5,
-  rotateSpeed = 0.06,
+  rotateSpeed = 0.02,
   showCircles = false,
   showDebugColors = false,
   // calculate rows & cols
-  numCols = Math.round(canvasWidth / (circleRadius + circleSpacing)),
-  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing)),
+  numCols = Math.round(canvasWidth / (circleRadius + circleSpacing) - 5),
+  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing) - 5),
   // vars for test colors
   count = numRows * 2,
   colors = [];
@@ -44,22 +44,12 @@ Circle.prototype = {
   },
 
   draw: function(ctx) {
-    // draw circle
-    if (showCircles) {
-      ctx.beginPath();
-      ctx.strokeStyle = showDebugColors ? this.color : '#acacac';
-      ctx.lineWidth = 1;
-      ctx.arc(this.x, this.y, this.radius, 0, PI2);
-      ctx.stroke();
-      ctx.closePath();
-    }
-
     // draw dot
     ctx.beginPath();
     ctx.fillStyle = '#ffffff';
     ctx.arc(
-      this.x + Math.cos(this.angle) * this.radius,
-      this.y + Math.sin(this.angle) * this.radius,
+      this.x + Math.cos(this.angle) * this.radius + 70,
+      this.y + Math.sin(this.angle) * this.radius + 70,
       3,
       0,
       PI2
@@ -111,7 +101,7 @@ function run() {
     circle;
 
   // clear
-  ctx.fillStyle = 'rgba(255, 0, 0, 0.1)';
+  ctx.fillStyle = '#117BFE';
   ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
   // loop over all circles and update and draw them
@@ -119,6 +109,7 @@ function run() {
     circle = circles[i];
     circle.update();
     circle.draw(ctx);
+    //console.log(1);
   }
 }
 
