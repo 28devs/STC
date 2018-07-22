@@ -1,3 +1,68 @@
+.form
+  
+  &--success
+    ^&__success
+      visibility: visible
+
+      &-icon, &-title, &-text
+        transform: translateY(0)
+
+  &__success
+    position: absolute 0 0 0 0
+    box: vertical center middle
+    background: #fff
+    padding: 25px @lg 25px 50px
+    border-radius: 5px
+    visibility: hidden
+    transition: opacity .2s ease !important
+    width: 100% !important
+
+    &--horizontal
+      box: vertical @lg horizontal
+
+      ^&-icon
+        margin-right: 0 @xl 10px
+        margin-bottom: -20px
+
+      ^&-text
+        display: block @xl none
+
+    &--hide-text
+      ^&-text
+        display: none
+
+    &-icon
+      background: svg-load('icons/ok.svg') no-repeat
+      size: size('icons/ok.svg')
+      margin-bottom: -20px
+      transform: translateY(-10px)
+      transition: .2s ease
+
+    &-title
+      @extend .hero__recall-title
+      transform: translateY(-10px)
+      transition: .2s ease .03s
+
+    &-text
+      @extend .hero__recall-text
+      transform: translateY(-10px)
+      transition: .2s ease .06s
+
+  > *
+    opacity: 1
+    transition: opacity 3s ease
+
+  &--loading
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute 0 0 0 0
+      z-index: 9
+
+    > *
+      opacity: .1
+  
 .input
 
   &__elem

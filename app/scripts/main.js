@@ -294,3 +294,63 @@ if (teamSlider) {
   teamSliderFn();
   window.addEventListener('resize', teamSliderFn);
 }
+
+//
+// Init smoth scroll
+//
+
+var scroll = new SmoothScroll('.scroll-to[href*="#"]');
+
+//
+// Modals
+//
+
+function eventFire(el, etype) {
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
+function closeModal() {
+  eventFire(document.querySelector('.basicLightbox '), 'click');
+}
+
+const getTargetHTML = function(elem) {
+  let id = elem.getAttribute('data-show-id');
+
+  const target = document.querySelector(`[data-id="${id}"]`);
+
+  return target.outerHTML;
+};
+
+document.querySelectorAll('[data-show-id]').forEach(function(elem) {
+  const html = getTargetHTML(elem);
+  elem.onclick = basicLightbox.create(html).show;
+});
+
+//
+// Forms demo
+//
+
+const forms = document.querySelectorAll('form');
+
+const formSubmitFn = function(e) {
+  e.preventDefault();
+
+  this.classList.add('form--loading');
+
+  setTimeout(() => {
+    this.classList.remove('form--loading');
+    this.classList.add('form--success');
+  }, 2000);
+};
+
+if (forms.length) {
+  forms.forEach(function(form) {
+    form.addEventListener('submit', formSubmitFn);
+  });
+}

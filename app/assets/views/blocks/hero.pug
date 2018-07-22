@@ -11,7 +11,7 @@ section.hero
       .hero__recall-title Заявка на консультацию
       .hero__recall-text Оставьте свои данные и наши финансовые советники ответят на любые вопросы, в удобное для вас время
 
-      form.hero__recall-form(action='#')
+      form.hero__recall-form.form(action='#')
         .input.hero__recall-input
           input.input__elem(type='text' name='name' placeholder='Имя')
 
@@ -19,3 +19,6 @@ section.hero
           input.input__elem(type='text' name='phone' placeholder='Телефон')
 
         button.hero__recall-btn.btn.btn--secondary Получить консультацию
+
+        +form-success
+

@@ -4,7 +4,7 @@ footer.footer
       .footer__recall-title Остались вопросы?
       .footer__recall-text Оставьте свои данные и наши финансовые советники ответят на любые вопросы, в удобное для вас время
 
-      form.footer__recall-form(action='#')
+      form.footer__recall-form.form(action='#')
         .input.footer__recall-input
           input.input__elem(type='text' name='name' placeholder='Имя')
 
@@ -12,6 +12,8 @@ footer.footer
           input.input__elem(type='text' name='phone' placeholder='Телефон')
 
         button.footer__recall-btn.btn Получить консультацию
+
+        +form-success()(class='form__success--horizontal')
 
     .footer__wrap
       .footer__logo
