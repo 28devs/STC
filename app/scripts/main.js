@@ -1,4 +1,25 @@
 //
+//jquery parents() pure js
+
+Element.prototype.parents = function(selector) {
+  var elements = [];
+  var elem = this;
+  var ishaveselector = selector !== undefined;
+
+  while ((elem = elem.parentElement) !== null) {
+    if (elem.nodeType !== Node.ELEMENT_NODE) {
+      continue;
+    }
+
+    if (!ishaveselector || elem.matches(selector)) {
+      elements.push(elem);
+    }
+  }
+
+  return elements;
+};
+
+//
 // Dots generate for sliders
 //
 
@@ -8,9 +29,8 @@ const sliderDotBlocks = document.querySelectorAll(
 
 if (sliderDotBlocks) {
   sliderDotBlocks.forEach(function(dotBlock) {
-    let sliderSlides = dotBlock.parentNode.parentNode.querySelector(
-      '.glide__slides'
-    );
+    let prentNode = dotBlock.parents('.glide')[0];
+    let sliderSlides = prentNode.querySelector('.glide__slides');
 
     for (let i = 0; i < sliderSlides.children.length; i++) {
       let sliderDot = document.createElement('div');
@@ -92,12 +112,13 @@ if (servicesSlider) {
         });
 
         servicesSliderInit.on('move', function() {
-          let bullets = document.querySelectorAll('.glide__bullet');
+          let prentsNode = servicesSliderInit.selector;
+          let bullets = prentsNode.querySelectorAll('.glide__bullet');
           bullets.forEach(function(elem) {
             elem.classList.remove('glide__bullet--active');
           });
 
-          let activeBullet = document.querySelector(
+          let activeBullet = prentsNode.querySelector(
             '.glide__bullet[data-glide-dir="=' + servicesSliderInit.index + '"]'
           );
           activeBullet.classList.add('glide__bullet--active');
@@ -131,15 +152,18 @@ if (resultSlider) {
   });
 
   resultSliderG.on('move', function() {
-    let bullets = document.querySelectorAll('.glide__bullet');
+    let prentsNode = resultSliderG.selector;
+    let bullets = prentsNode.querySelectorAll('.glide__bullet');
     bullets.forEach(function(elem) {
       elem.classList.remove('glide__bullet--active');
     });
-
-    let activeBullet = document.querySelector(
+    let activeBullet = prentsNode.querySelector(
       '.glide__bullet[data-glide-dir="=' + resultSliderG.index + '"]'
     );
     activeBullet.classList.add('glide__bullet--active');
+
+    let currentCount = prentsNode.querySelector('.glide__count-current');
+    currentCount.innerHTML = resultSliderG.index + 1;
   });
 
   resultSliderG.mount();

@@ -1,13 +1,28 @@
 .results
-  background: url('../img/results/left-shape.svg') no-repeat top left / cover,
+  background: url('../img/results/sm-bg.svg') no-repeat top left / cover @md url('../img/results/md-bg.svg') no-repeat top left / cover @lg 
+              url('../img/results/left-shape.svg') no-repeat top left / cover,
               url('../img/results/right-shape.svg') no-repeat bottom right
-              
+  padding-bottom: @sm-down 80px
+
+  &__slider.box--echo
+    
+    &:after
+      background-color: #C1C1C1
+      opacity: .2
+      z-index: -1
+      top: -30px
+      border-radius: 5px
+      bottom: 0
+      height: auto
+
   &__title
     text-align: center
+    text: @lg-down #fff
 
   &__sub-title
     text-align: center
     text: @md-down 16px 18px
+    text: @lg-down #fff 
 
   &__inner
     background: #fff
@@ -15,13 +30,23 @@
     border-radius: 5px
 
   &__item
-    box: space-between
+    box: vertical-reverse @xl horizontal space-between
+    cursor: pointer
+
 
   &__legend
     position: relative
-    width: 40%
-    padding: 35px 30px
+    width: 100% @xl 42%
+    padding: 25px 16px @md 35px 30px
     background-color: #F3F8FF
+    padding-top: @md-down 12px
+    padding-bottom: 25px @sm 60px @md 35px
+
+  & .glide__bullet
+    background-color: @sm-down rgba(255, 255, 255, .3)
+
+    &:hover, &--active
+      background-color: @sm-down rgba(255, 255, 255, 1)
 
   &__person
     text: 18px * 700 @md 24px
@@ -43,5 +68,10 @@
       border-bottom: transparent
 
   &__graph
-    width: 60%
+    width: 100% @xl 58%
     padding: 15px 10px
+
+  &__graph-img
+    width: 100% @lg 652px @xl 100%
+    margin: 0 auto
+    display: block
