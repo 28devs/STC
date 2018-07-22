@@ -296,10 +296,20 @@ if (teamSlider) {
 }
 
 //
+// Init gumshoe
+//
+
+gumshoe.init({
+  activeClass: 'header__nav-link--active'
+});
+
+//
 // Init smoth scroll
 //
 
-var scroll = new SmoothScroll('.scroll-to[href*="#"]');
+var scroll = new SmoothScroll('.scroll-to[href*="#"]', {
+  header: '[data-scroll-header]'
+});
 
 //
 // Modals
@@ -321,9 +331,7 @@ function closeModal() {
 
 const getTargetHTML = function(elem) {
   let id = elem.getAttribute('data-show-id');
-
   const target = document.querySelector(`[data-id="${id}"]`);
-
   return target.outerHTML;
 };
 
@@ -338,14 +346,15 @@ document.querySelectorAll('[data-show-id]').forEach(function(elem) {
 
 const forms = document.querySelectorAll('form');
 
-const formSubmitFn = function(e) {
+const formSubmitFn = function(e, elem = this) {
+  console.log(e, elem);
   e.preventDefault();
 
-  this.classList.add('form--loading');
+  elem.classList.add('form--loading');
 
   setTimeout(() => {
-    this.classList.remove('form--loading');
-    this.classList.add('form--success');
+    elem.classList.remove('form--loading');
+    elem.classList.add('form--success');
   }, 2000);
 };
 

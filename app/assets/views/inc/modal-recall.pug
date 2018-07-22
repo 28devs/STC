@@ -5,7 +5,7 @@
     .modal__title Заявка на консультацию
     .modal__text Начните зарабатывать реальные деньги на финансовом рынке без многолетнего опыта и больших инвестиций
 
-    form.form.modal__form.form(action='#!' onsubmit='formSubmitFn(this)')
+    form.form.modal__form.form(action='#!' onsubmit='formSubmitFn(event, this)')
       .input
         input.input__elem(type='text' name='name' placeholder='Имя')
       
@@ -14,3 +14,5 @@
 
       .input
         button.modal__btn.btn Получить консультацию
+
+      +form-success
