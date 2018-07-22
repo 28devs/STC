@@ -1,5 +1,8 @@
+document.querySelector('.hero').classList.add('hero--load');
+
 //
 //jquery parents() pure js
+//
 
 Element.prototype.parents = function(selector) {
   var elements = [];
@@ -18,13 +21,6 @@ Element.prototype.parents = function(selector) {
 
   return elements;
 };
-
-//
-// dots wave
-//
-
-createCircles();
-run();
 
 //
 // Dots generate for sliders

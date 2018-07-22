@@ -4,6 +4,10 @@
   z-index: 9
   transition: $transition
   @extend .box--echo
+  @extend .animate
+
+  &--is-load
+    @extend .animate--end
 
   &:before, &:after
     visibility: hidden
