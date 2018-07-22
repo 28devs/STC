@@ -436,8 +436,13 @@ document.querySelectorAll('.easeBox').forEach((elem, i) => {
           timing: 'linear'
         },
         '--scale': {
-          from: '.8',
+          from: '.97',
           to: '1',
+          timing: 'linear'
+        },
+        '--rotate': {
+          from: '5deg',
+          to: '0',
           timing: 'linear'
         }
       }
