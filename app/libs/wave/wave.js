@@ -93,7 +93,7 @@ function run() {
     circle;
 
   // clear
-  ctx.fillStyle = '#117BFE';
+  ctx.fillStyle = '#036ff5';
   ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
   // loop over all circles and update and draw them

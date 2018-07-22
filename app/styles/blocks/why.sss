@@ -1,8 +1,19 @@
 .why
+  position: relative
   background: radial-gradient(466.47px at 83.19% 13.86%, #0DD0FB 0%, #036FF5 100%) @md url('../img/why/shape-lg.svg') no-repeat left top / contain @xl url('../img/why/shape.svg') no-repeat left top / contain
   padding-bottom: 40px  @md 400px @lg 400px
 
+  &__dots
+    display: @md-down none
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    transform: translate(-25%, -15%)
+
+
   &__inner
+    position: relative
     box: middle 
     flex-wrap: wrap @lg nowrap
     margin: 0 @md 0 -40px 0 -20px @lg 0
@@ -12,8 +23,11 @@
     margin-bottom: 23px @md 40px @xl 58px
     text-align: center @lg left
     width: 100% @lg 25%
+    position: relative
+    z-index: 1
 
   &__text-col
+    position: relative
     margin-top: 0 @lg 10px
     width: 100% @md 33.33333% @lg initital
     min-width: @lg-down 33.33333%
@@ -23,6 +37,8 @@
 
   &__desc-wrap
     box: horizontal middle @md vertical stretch 
+    position: relative
+    z-index: 1
 
   &__five
     margin-bottom: 0 @md 17px @lg 19px
@@ -36,6 +52,8 @@
     text-align: left @md center @lg left
 
   &__double-col, &__triple-col
+    position: relative
+    z-index: 1
     box: horizontal stretch center @lg vertical middle center
     width: 65%
     margin-top: 0 @lg -200px
