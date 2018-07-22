@@ -1,0 +1,18 @@
+section.team
+  .team__container.container
+    h1.team__title.h1 Наша команда
+
+      .team__slider-prev.btn.btn--slider.btn--icon-prev
+      .team__slider-next.btn.btn--slider.btn--icon-next
+
+    .glide.team__slider
+      .glide__track(data-glide-el='track')
+        .glide__slides.team__slides
+          each item, i in team
+            .glide__slide.team__slide
+              .team__item
+                .team__item-img(class='team__item-img--' + (i+1))
+                .team__item-title= item.title
+                .team__item-text= item.text
+
+      .glide__bullets.team__bullets.glide__bullets--only-sm(data-glide-el='controls[nav]')
