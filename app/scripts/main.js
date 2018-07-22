@@ -259,7 +259,12 @@ if (teamSlider) {
           perView: 2,
           bound: true,
           gap: 20,
-          peek: 20
+          peek: 20,
+          breakpoints: {
+            439: {
+              perView: 1
+            }
+          }
         });
 
         teamSliderInit.on('move', function() {

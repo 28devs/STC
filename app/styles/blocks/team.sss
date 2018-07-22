@@ -1,17 +1,18 @@
 .team
-  padding: 70px 0 30px @md 80px 0 55px @lg 90px 0 50px @xl 100px 0 70px
+  padding: 40px 0 20px @xs 70px 0 30px @md 80px 0 55px @lg 90px 0 50px @xl 100px 0 70px
 
   &__container
     padding: @md-down * 0
     max-width: @md-down 100%
 
   &__title
-    margin-bottom: 45px @md 55px @lg 75px
+    margin-bottom: 25px @xs 45px @md 55px @lg 75px
     margin: * 20px @md * 0
-    box: space-between center
+    box: @xs space-between center
+    text: center
 
     .btn
-      display: @md none
+      display: none @xs flex @md none
 
   &__slider
 
@@ -28,7 +29,7 @@
     width: calc(25% - 9px) @lg calc(25% - 16px) @xl calc(25% - 20px)
 
   &__bullets
-    margin-top: 50px 
+    margin-top: 30px @xs 50px 
 
     .glide__bullet
       &:last-child
