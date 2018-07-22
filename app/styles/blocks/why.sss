@@ -4,66 +4,66 @@
 
   &__inner
     box: middle 
-    flex-wrap: wrap @xl nowrap
-    margin: 0 @md 0 -40px 0 -20px @xl 0
+    flex-wrap: wrap @lg nowrap
+    margin: 0 @md 0 -40px 0 -20px @lg 0
 
   &__title
     text: #fff
     margin-bottom: 23px @md 40px @xl 58px
-    text-align: center @xl left
-    width: 100% @xl 25%
+    text-align: center @lg left
+    width: 100% @lg 25%
 
   &__text-col
-    margin-top: 0 @xl 10px
-    width: 100% @md 33.33333% @xl initital
-    min-width: @xl-down 33.33333%
-    padding-right: @xl-down 30px
-    box-sizing: @xl-down border-box
+    margin-top: 0 @lg 10px
+    width: 100% @md 33.33333% @lg initital
+    min-width: @lg-down 33.33333%
+    padding-right: @lg-down 30px
+    box-sizing: @lg-down border-box
     margin-bottom: @md-down 25px
 
   &__desc-wrap
     box: horizontal middle @md vertical stretch 
 
   &__five
-    margin-bottom: 0 @md 17px @xl 19px
-    margin-left: 0 @md auto @xl -40px
-    margin-right: 15px @md auto @xl initial
-    width: 75px @md 125px @xl initial
+    margin-bottom: 0 @md 17px @lg 19px
+    margin-left: 0 @md auto @lg -40px
+    margin-right: 15px @md auto @lg initial
+    width: 75px @md 125px @lg initial
   
   &__desc
-    text: #fff 16px 17px 700  @md 18px 22px @xl 24px 30px
+    text: #fff 16px 17px 700  @md 18px 22px @lg 24px 30px
     text-shadow: 0px 10px 24px rgba(0, 38, 86, 0.2)
-    text-align: left @md center @xl left
+    text-align: left @md center @lg left
 
   &__double-col, &__triple-col
-    box: horizontal stretch center @xl vertical middle center
+    box: horizontal stretch center @lg vertical middle center
     width: 65%
-    margin-top: 0 @xl -200px
+    margin-top: 0 @lg -200px
     display: @md-down none
 
   &__double-col
-    padding-right: 0 @xl 30px
-    margin-left: 0 @xl 4vw
+    padding-right: 0 @lg 30px
+    margin-left: 0 @lg 4vw
     box-sizing: border-box
-    width: 66.33333% @xl 65%
-    min-width: 66.33333% @xl initial
+    width: 66.33333% @lg 65%
+    min-width: 66.33333% @lg initial
 
     ^&__item
-      width: 44% @lg 50% @xl initial
-      margin-right: @xl-down 30px
+      width: 44% @lg 50% @lg initial
+      margin-right: @lg-down 30px
 
     @each $i in 1, 2
       & > :nth-child($(i))
         background-image: url('../img/why/doubl-$(i).svg')
 
   &__triple-col
-    width: @xl-down 100%
-    min-width: @xl-down 100%
+    width: @lg-down 100%
+    min-width: @lg-down 100%
     margin-top: 30px
 
     ^&__item
-      width: @xl-down 33.33333%
-      margin-right: @xl-down 30px
+      width: @lg-down 33.33333%
+      margin-right: @lg-down 30px
 
     @each $i in 1, 2, 3
       & > :nth-child($(i))
@@ -72,8 +72,8 @@
   &__item
     background-color: #fff
     box-sizing: border-box
-    padding:  24px 20px @xl 40px 30px
-    margin-bottom: 0 @xl 30px
+    padding:  24px 20px @lg 40px 30px
+    margin-bottom: 0 @lg 30px
     border-radius: 5px
     box-shadow: 0px 10px 24px rgba(11, 118, 251, 0.12)
     background-repeat: no-repeat
@@ -84,12 +84,12 @@
 
   &__item-title
     text: 18px 21px 700
-    margin-bottom: 10px @md 16px @xl 21px
+    margin-bottom: 10px @md 16px @lg 21px
     width: 85% @xl 75%
 
   &__item-desc
     text: 14px 16px @md 14px 17px
-    width: 85% @xl 75%
+    width: 85% @lg 75%
   
   &__slider
     display: block @md none
