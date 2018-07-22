@@ -1,5 +1,30 @@
 section.offices
+  h1.offices__title.h1 Офисы STC
+
+  .offices__container.container
+
+    .glide.offices__slider
+      .glide__bullets.glide__bullets--only-sm(data-glide-el='controls[nav]' data-glide-generate-false)
+        each office, i in offices
+          .offices__bullet(data-glide-dir='=' + i)= office.title
+        
+      .glide__track(data-glide-el='track')
+        .glide__slides
+          each office, i in offices
+            .glide__slide.offices__slide
+              .offices__item
+                .offices__item-img(class='offices__item-img--' + (i+1))
+
+                .offices__item-content
+                  .offices__item-title= office.title
+                  .offices__item-text= office.text
+                  .offices__item-phone + 8 800 55 06 216
+
+                  .offices__item-btn.btn.btn--small Связаться с офисом
 
 
-//- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKHMTkHEWFerdIYypni1ca3XTW511OVfQ&callback=initMap" async defer)
-//- script(type='text/javascript' src='scripts/map.js' defer)
+  #map
+
+
+script(type='text/javascript' src='scripts/map.js')
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKHMTkHEWFerdIYypni1ca3XTW511OVfQ&callback=initMap" async defer)

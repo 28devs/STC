@@ -3,14 +3,15 @@
 //
 
 const sliderDotBlocks = document.querySelectorAll(
-  '[data-glide-el="controls[nav]"]'
+  '[data-glide-el="controls[nav]"]:not([data-glide-generate-false])'
 );
 
 if (sliderDotBlocks) {
   sliderDotBlocks.forEach(function(dotBlock) {
-    // console.log(dotBlock)
-    let sliderSlides = dotBlock.parentNode.parentNode.querySelector('.glide__slides');
-    console.log(sliderSlides)
+    let sliderSlides = dotBlock.parentNode.parentNode.querySelector(
+      '.glide__slides'
+    );
+
     for (let i = 0; i < sliderSlides.children.length; i++) {
       let sliderDot = document.createElement('div');
       sliderDot.classList.add('glide__bullet');
@@ -142,4 +143,68 @@ if (resultSlider) {
   });
 
   resultSliderG.mount();
+}
+
+//
+// Offices slider
+//
+
+const officesSlider = document.querySelector('.offices__slider');
+
+if (officesSlider) {
+  var officesSliderInit = false;
+
+  const officesSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!officesSliderInit) {
+        officesSliderInit = new Glide(officesSlider, {
+          perView: 1
+        });
+
+        officesSliderInit.on('move', function() {
+          let bullets = officesSlider.querySelectorAll('.offices__bullet');
+          bullets.forEach(function(elem) {
+            elem.classList.remove('glide__bullet--active');
+          });
+
+          let activeBullet = officesSlider.querySelector(
+            '.offices__bullet[data-glide-dir="=' +
+              officesSliderInit.index +
+              '"]'
+          );
+          activeBullet.classList.add('glide__bullet--active');
+        });
+
+        officesSliderInit.mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof officesSliderInit === 'object') {
+        officesSliderInit.destroy();
+        officesSliderInit = false;
+      }
+    }
+
+    officesSlider.style.marginBottom =
+      -officesSlider.querySelector('.offices__item-content').clientHeight +
+      'px';
+  };
+
+  officesSliderFn();
+  window.addEventListener('resize', officesSliderFn);
+}
+
+//
+//
+//
+
+const galleryBtn = document.querySelector('.gallery__btn');
+
+if (galleryBtn) {
+  const galleryBlock = document.querySelector('.gallery');
+
+  galleryBtn.addEventListener('click', function() {
+    galleryBlock.classList.remove('gallery--mobile-hide');
+    galleryBtn.style.display = 'none';
+  });
 }

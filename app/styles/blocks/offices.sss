@@ -1,3 +1,90 @@
 .offices
-  height: 800px
-  background: #192954
+  position: relative
+  z-index: 1
+
+  #map
+    size: 100% 800px
+    position: relative
+    z-index: 1
+
+  &__title
+    text: center
+    padding: 40px 0 20px @sm 50px 0 40px @md 90px 0 70px
+
+  &__container
+    box: flex space-between
+    z-index: 2
+    position: relative
+    max-width: @lg-down 100% @xl-down 100%
+    padding: @md-down 0
+
+  &__slider
+
+    .glide
+
+      &__bullets
+        margin: 0 15px @xs 0 15% @sm 0 20%
+      
+      &__slides
+        justify-content: @md space-between
+
+  &__slide
+    width: 100% @md calc(33.3333% - 7px) @lg calc(33.3333% - 15px) @xl calc(33.3333% - 20px)
+    height: auto
+
+  &__bullet
+    text: #BEBEBE 500 16px
+    padding: 10px 13px
+    border-bottom: 2px #F0F0F0 solid
+    margin-bottom: 25px
+    cursor: pointer
+    width: 100%
+    text-align: center
+
+    &:hover
+      border-color: #dadada
+
+    &.glide__bullet--active
+      border-color: $primary
+      text: $primary
+      background: transparent
+
+  &__item
+    background: #fff
+    text: center
+    box: vertical center space-between
+    border-radius: 5px
+    overflow: hidden
+    box-shadow: 0px 10px 24px rgba(11, 118, 251, 0.12)
+    height: 100%
+    margin: 0 15px @xs 0 15% @sm 0 20% @md 0
+
+    &-img
+      width: 100%
+      padding-bottom: 60% @md 84%
+
+      @for $i from 1 to 3
+        &--$i
+          background: resolve('offices/office-$i.jpg') center top / cover
+
+    &-content
+      padding: 16px 20px 25px @md 25px 20px 30px
+      box: vertical center
+      height: 100%
+
+    &-title
+      text: 500 18px @md 18px @lg 24px
+      display: none @md block
+
+    &-text
+      text: 14px 20px @md 14px 21px @lg 16px 24px
+      margin: 3px 0 10px
+
+    &-phone
+      text: 700 16px
+      margin-bottom: 15px @md 30px
+
+    &-btn
+      margin-top: auto
+      padding: * 23px
+      white-space: nowrap
