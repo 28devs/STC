@@ -20,6 +20,13 @@ Element.prototype.parents = function(selector) {
 };
 
 //
+// dots wave
+//
+
+createCircles();
+run();
+
+//
 // Dots generate for sliders
 //
 
