@@ -1,0 +1,25 @@
+section.why.block
+
+  .container
+    .why__inner
+
+      .why__text-col
+        h1.why__title.h1 Почему именно мы?
+
+        .why__desc-wrap
+          img.why__five(src="img/why/five-title.svg", alt="")
+          .why__desc причин которые делают наш проект уникальным
+
+      .why__double-col
+        each item in whyDouble
+          .why__item
+            .why__item-title= item.title
+            .why__item-desc= item.desc
+
+
+      .why__triple-col
+        each item in whyTriple
+          .why__item
+            .why__item-title= item.title
+            .why__item-desc= item.desc
+
