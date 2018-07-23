@@ -2,12 +2,14 @@
   padding: 9px 0 10px @sm 20px 0
   position: fixed 0 0 null 0
   z-index: 9
-  transition: $transition
-  @extend .box--echo
-  @extend .animate
+  transition: .3s ease, transform .5s ease .1s
+  opacity: 0
+  will-change: padding, transform, opacity
+  transform: translateY(-67px)
 
   &--is-load
-    @extend .animate--end
+    transform: translateY(0)
+    opacity: 1
 
   &:before, &:after
     visibility: hidden
@@ -116,7 +118,8 @@
   &__logo
     size: 118px 45px @sm 139px 53px @md 200px 75px
     background: resolve('logo.png') no-repeat center / contain
-    transition: $transition
+    transition: .2s ease
+    will-change: width, height
 
   &__nav
     box: vertical @sm horizontal center

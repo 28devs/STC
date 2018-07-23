@@ -11,13 +11,11 @@
     position: absolute 0 0 0 0
     box: vertical center middle
     background: #fff
+    transition: opacity .2s ease !important
     padding: 25px @lg 25px 50px
     border-radius: 5px
     visibility: hidden
     width: 100% !important
-
-    &:not(.btn)
-      transition: filter .2s ease
 
     &--horizontal
       box: vertical @lg horizontal
@@ -50,9 +48,9 @@
       transform: translateY(-10px)
       transition: .2s ease .06s
 
-  > *
+  > *:not(.btn)
     opacity: 1
-    transition: opacity 3s ease
+    transition: filter 3s ease
 
   &--loading
     position: relative

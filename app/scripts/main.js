@@ -353,7 +353,14 @@ if (teamSlider) {
 //
 
 gumshoe.init({
-  activeClass: 'header__nav-link--active'
+  activeClass: 'header__nav-link--active',
+  callback: function(nav) {
+    if (nav === undefined) {
+      document
+        .querySelector('.header__nav-link:first-child')
+        .classList.add('header__nav-link--active');
+    }
+  }
 });
 
 //

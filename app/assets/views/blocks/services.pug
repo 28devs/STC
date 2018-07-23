@@ -12,8 +12,8 @@ section.services#services
             each item in services
               .glide__slide.services__item(data-aos)
                 .services__service
-                  .services__img(data-aos data-aos-anchor='.glide__slide.services__item')
-                  .services__service-title.h3(data-aos data-aos-anchor='.glide__slide.services__item')= item.title
-                  .services__service-sub-title(data-aos data-aos-anchor='.glide__slide.services__item')= item.subTitle
+                  .services__img(data-aos data-aos-anchor='.services__item')
+                  .services__service-title.h3(data-aos data-aos-anchor='.services__item')= item.title
+                  .services__service-sub-title(data-aos data-aos-anchor='.services__item')= item.subTitle
             
         .glide__bullets.glide__bullets--only-sm(data-glide-el='controls[nav]')
