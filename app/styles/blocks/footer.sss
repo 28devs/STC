@@ -103,9 +103,13 @@
       margin-top: 20px @xl 0
 
     &-studio
-      background: svg-load('icons/studio.svg')
+      background: svg-load('icons/studio.svg', fill: #fff)
       size: size('icons/studio.svg')
       display: block
+      transition: $transition
+
+      &:hover
+        background: svg-load('icons/studio.svg', fill: $blue)
 
     &-right
       text: rgba(255, 255, 255, .8) 10px 14px
