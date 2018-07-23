@@ -1,16 +1,16 @@
 section.tools.block
 
   .container
-    h1.tools__title.h1.easeBox Наши инструменты
+    h1.tools__title.h1(data-aos) Наши инструменты
     
-    h4.tools__sub-title.h4.easeBox Мы специализируемся на следующих биржевых инструментах:
+    h4.tools__sub-title.h4(data-aos) Мы специализируемся на следующих биржевых инструментах:
 
     .tools__inner.block-inner
 
       each item in tools
-        .tools__item.easeBox
+        .tools__item(data-aos)
           .tools__tool
-            .tools__img
-            .tools__item-title= item.title
-            .tools__item-desc= item.desc
+            .tools__img(data-aos)
+            .tools__item-title(data-aos)= item.title
+            .tools__item-desc(data-aos)= item.desc
 

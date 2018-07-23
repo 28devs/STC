@@ -1,11 +1,11 @@
 section.results.block#results
 
   .container
-    h1.results__title.h1.easeBox Наши результаты
+    h1.results__title.h1(data-aos) Наши результаты
     
-    h4.results__sub-title.h4.easeBox У нас одна цель - высокие доходы наших клиентов
+    h4.results__sub-title.h4(data-aos) У нас одна цель - высокие доходы наших клиентов
 
-    .results__slider.box--echo
+    .results__slider.box--echo(data-aos)
       .glide
         
         .results__inner.block-inner.glide__track(data-glide-el='track')
@@ -14,15 +14,15 @@ section.results.block#results
               .glide__slide
                 .results__item
                   .results__legend
-                    .results__person= item.name
-                    .results__legend-desc= item.desc
-                    a.results__link(href="#!") Смотреть результат
+                    .results__person(data-aos)= item.name
+                    .results__legend-desc(data-aos)= item.desc
+                    a.results__link(href="#!" data-aos) Смотреть результат
 
                     
-                  .results__graph
+                  .results__graph(data-aos)
                     img.results__graph-img(src='img/results/graph-' + item.graph + '.svg')
 
-          .glide__panel
+          .glide__panel(data-aos)
             .glide__count
               span.glide__count-current 2
               span  / 

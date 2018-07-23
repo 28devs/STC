@@ -1,5 +1,5 @@
 section.offices#offices
-  h1.offices__title.h1.easeBox Офисы STC
+  h1.offices__title.h1(data-aos) Офисы STC
 
   .offices__container.container
 
@@ -11,14 +11,14 @@ section.offices#offices
       .glide__track(data-glide-el='track')
         .glide__slides
           each office, i in offices
-            .glide__slide.offices__slide.easeBox
+            .glide__slide.offices__slide(data-aos)
               .offices__item
                 .offices__item-img(class='offices__item-img--' + (i+1))
 
                 .offices__item-content
-                  .offices__item-title= office.title
-                  .offices__item-text= office.text
-                  .offices__item-phone + 8 800 55 06 216
+                  .offices__item-title(data-aos)= office.title
+                  .offices__item-text(data-aos)= office.text
+                  .offices__item-phone(data-aos) + 8 800 55 06 216
 
                   .offices__item-btn.btn.btn--small(data-show-id='office' + (i+1)) Связаться с офисом
 

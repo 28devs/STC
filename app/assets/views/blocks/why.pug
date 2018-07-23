@@ -1,26 +1,25 @@
 section.why.block
 
-
   .container
-    h1.why__title.h1 Почему именно мы?
+    h1.why__title.h1(data-aos) Почему именно мы?
 
     .why__inner
-      <canvas class="why__dots js-canvas easeBox"></canvas>
+      canvas.why__dots.js-canvas
 
       .why__text-col
         .why__desc-wrap
-          img.why__five(src="img/why/five-title.svg", alt="")
-          .why__desc причин которые делают наш проект уникальным
+          img.why__five(src="img/why/five-title.svg", alt="" data-aos)
+          .why__desc(data-aos) причин которые делают наш проект уникальным
 
       .why__double-col
         each item in whyDouble
-          .why__item
+          .why__item(data-aos)
             .why__item-title= item.title
             .why__item-desc= item.desc
 
       .why__triple-col
         each item in whyTriple
-          .why__item
+          .why__item(data-aos)
             .why__item-title= item.title
             .why__item-desc= item.desc
 

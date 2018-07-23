@@ -1,20 +1,20 @@
 var PI2 = Math.PI * 2,
   // canvas vars
-  canvasWidth = 500,
-  canvasHeight = 500,
+  canvasWidth = 1000,
+  canvasHeight = 1000,
   canvas = document.querySelector('.js-canvas'),
   ctx = canvas.getContext('2d'),
   // vars for the circles
   circles = [],
   circleDiameter = 40,
   circleRadius = circleDiameter * 0.5,
-  circleSpacing = 5,
-  rotateSpeed = 0.007,
+  circleSpacing = 8,
+  rotateSpeed = 0.01,
   showCircles = false,
   showDebugColors = false,
   // calculate rows & cols
-  numCols = Math.round(canvasWidth / (circleRadius + circleSpacing) - 5),
-  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing) - 5);
+  numCols = Math.round(canvasWidth / (circleRadius + circleSpacing) - 1),
+  numRows = Math.round(canvasHeight / (circleRadius + circleSpacing) - 1);
 
 // set canvas size
 canvas.setAttribute('width', canvasWidth);
@@ -38,11 +38,11 @@ Circle.prototype = {
   draw: function(ctx) {
     // draw dot
     ctx.beginPath();
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
     ctx.arc(
-      this.x + Math.cos(this.angle) * this.radius + 70,
-      this.y + Math.sin(this.angle) * this.radius + 70,
-      3,
+      this.x + Math.cos(this.angle) * this.radius + 40,
+      this.y + Math.sin(this.angle) * this.radius + 40,
+      1.2,
       0,
       PI2
     );
@@ -94,7 +94,7 @@ function run() {
 
   // clear
   ctx.fillStyle = '#036ff5';
-  ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
   // loop over all circles and update and draw them
   while (i--) {
