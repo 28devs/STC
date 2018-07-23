@@ -449,3 +449,62 @@ AOS.init({
   once: true,
   disable: window.innerWidth < 1024
 });
+
+//
+// Gallery
+//
+
+var getSrc = function getSrc(elem) {
+  return elem.getAttribute('data-src');
+};
+
+var getPrev = function getPrev(elem) {
+  return document.querySelector('.' + elem.getAttribute('data-prev'));
+};
+var getNext = function getNext(elem) {
+  return document.querySelector('.' + elem.getAttribute('data-next'));
+};
+
+var open = function open(elem) {
+  var init = function init(instance) {
+    // Remove current src first. It stays until the second image has loaded.
+    // You can also show a spinner in the meanwhile.
+    instance.element().querySelector('img').src = '';
+
+    instance.element().querySelector('img').src = getSrc(elem);
+
+    var prev = instance.element().querySelector('#prev');
+    var next = instance.element().querySelector('#next');
+
+    prev.onclick = function(e) {
+      elem = getPrev(elem);
+
+      init(instance);
+    };
+
+    next.onclick = function(e) {
+      elem = getNext(elem);
+
+      init(instance);
+    };
+  };
+
+  basicLightbox
+    .create('<img>', {
+      beforePlaceholder:
+        '<button id="prev" class="btn btn--slider btn--icon-prev btn--gallery"></button>',
+      afterPlaceholder:
+        '<button id="next" class="btn btn--slider btn--icon-next btn--gallery"></button>',
+      beforeShow: init
+    })
+    .show();
+};
+
+Array.prototype.forEach.call(
+  document.querySelectorAll('.gallery__item'),
+  function(elem) {
+    elem.onclick = function(e) {
+      return open(elem);
+    };
+  }
+);
