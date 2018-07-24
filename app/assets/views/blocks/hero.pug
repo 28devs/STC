@@ -1,25 +1,31 @@
-section.hero
-  .hero__container.container
-    .hero__text-wrap
-      .hero__title.h1.animate STC cosulting – ваш надежный проводник в мире финансов
+mixin hero(video)
+  section.hero(class=video && 'hero--video')
+    .hero__container.container
+      .hero__text-wrap
+        .hero__title.h1.animate STC cosulting – ваш надежный проводник в мире финансов
 
-      .hero__text.animate Начните зарабатывать реальные деньги на финансовых рынках без многолетнего опыта и больших инвестиций
+        .hero__text.animate Начните зарабатывать реальные деньги на финансовых рынках без многолетнего опыта и больших инвестиций
 
-      .animate-btn.animate
-        a.hero__btn.btn.btn--small.btn--white.btn--icon-play(href='#!' data-show-id='video') Смотреть видео о компании
+        .animate-btn.animate
+          a.hero__btn.btn.btn--small.btn--white.btn--icon-play(href='#!' data-show-id='video') Смотреть видео о компании
 
-    .hero__recall.box.box--echo.animate
-      .hero__recall-title Заявка на консультацию
-      .hero__recall-text Оставьте свои данные и наши финансовые советники ответят на любые вопросы, в удобное для вас время
+      .hero__recall.box.box--echo.animate
+        .hero__recall-title Заявка на консультацию
+        .hero__recall-text Оставьте свои данные и наши финансовые советники ответят на любые вопросы, в удобное для вас время
 
-      form.hero__recall-form.form(action='#')
-        .input.hero__recall-input
-          input.input__elem(type='text' name='name' placeholder='Имя' data-error='Введите имя')
+        form.hero__recall-form.form(action='#')
+          .input.hero__recall-input
+            input.input__elem(type='text' name='name' placeholder='Имя' data-error='Введите имя')
 
-        .input.hero__recall-input
-          input.input__elem(type='text' name='phone' placeholder='Телефон' data-error='Введите телефон')
+          .input.hero__recall-input
+            input.input__elem(type='text' name='phone' placeholder='Телефон' data-error='Введите телефон')
 
-        button.hero__recall-btn.btn.btn--secondary Получить консультацию
+          button.hero__recall-btn.btn.btn--secondary Получить консультацию
 
-        +form-success
+          +form-success
+
+    if (video)
+      .hero__video
+        video.hero__video-elem(autoplay muted loop)
+          source(src='videos/hero.mp4' type='video/mp4')
 
