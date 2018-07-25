@@ -372,6 +372,18 @@ var scroll = new SmoothScroll('.scroll-to[href*="#"]', {
 });
 
 //
+// Phone mask
+//
+
+const inputMaskInit = function() {
+  new Inputmask({
+    mask: '+7 (999) 999-99-99'
+  }).mask(document.querySelectorAll('[name="phone"]'));
+};
+
+inputMaskInit();
+
+//
 // Modals
 //
 
@@ -397,7 +409,11 @@ const getTargetHTML = function(elem) {
 
 document.querySelectorAll('[data-show-id]').forEach(function(elem) {
   const html = getTargetHTML(elem);
-  elem.onclick = basicLightbox.create(html).show;
+  elem.onclick = basicLightbox.create(html, {
+    afterShow: function() {
+      inputMaskInit();
+    }
+  }).show;
 });
 
 //

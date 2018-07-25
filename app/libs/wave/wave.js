@@ -1,3 +1,5 @@
+// Dots
+
 var PI2 = Math.PI * 2,
   // canvas vars
   canvasWidth = 1000,
