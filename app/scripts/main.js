@@ -354,6 +354,7 @@ if (teamSlider) {
 
 gumshoe.init({
   activeClass: 'header__nav-link--active',
+  selectorHeader: '.header',
   callback: function(nav) {
     if (nav === undefined) {
       document
@@ -368,7 +369,7 @@ gumshoe.init({
 //
 
 var scroll = new SmoothScroll('.scroll-to[href*="#"]', {
-  header: '[data-scroll-header]'
+  header: '.header'
 });
 
 //
